@@ -1,0 +1,16 @@
+*.swp
+*.json
+*.tar.gz
+
+.python-version
+.ipynb_checkpoints
+.log
+.env
+.venv
+.score_data
+.storage
+.DS_Store
+
+venv/
+
+.idea/
