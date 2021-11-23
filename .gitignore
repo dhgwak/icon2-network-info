@@ -1,5 +1,6 @@
 *.swp
 *.json
+*.pyc
 *.tar.gz
 
 .python-version
@@ -11,6 +12,8 @@
 .storage
 .DS_Store
 
+__pycache__/
+*.py[cod]
 venv/
 
 .idea/

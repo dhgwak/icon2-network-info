@@ -61,6 +61,30 @@ reference:
     FASTEST_START:
       default: false
       type: bool
+    GENESIS:
+      default:
+        accounts:
+        - address: hx54f7853dc6481b670caf69c5a27c7c8fe5be8269
+          balance: '0x2961fff8ca4a62327800000'
+          name: god
+        - address: hx1000000000000000000000000000000000000000
+          balance: '0x0'
+          name: treasury
+        message: "A rhizome has no beginning or end; it is always in the middle, between\
+          \ things, interbeing, intermezzo. The tree is filiation, but the rhizome\
+          \ is alliance, uniquely alliance. The tree imposes the verb \"to be\" but\
+          \ the fabric of the rhizome is the conjunction, \"and ... and ...and...\"\
+          This conjunction carries enough force to shake and uproot the verb \"to\
+          \ be.\" Where are you going? Where are you coming from? What are you heading\
+          \ for? These are totally useless questions.\n\n - Mille Plateaux, Gilles\
+          \ Deleuze & Felix Guattari\n\n\"Hyperconnect the world\""
+      type: dict
+    GENESIS_JSON: /goloop/config/genesis.json
+    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
+    IISS:
+      default: ''
+      type: dict
+    IISS_JSON: /goloop/icon_config.json
     IS_AUTOGEN_CERT:
       default: false
       type: bool

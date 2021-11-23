@@ -13,6 +13,7 @@ class bcolors:
     yellow = "\033[93m"
     light_purple = "\033[94m"
     purple = "\033[95m"
+    cyan = "\033[96m"
 
     FAIL = "\033[91m"
     ENDC = "\033[0m"
