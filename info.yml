@@ -20,6 +20,8 @@ MainNet:
     tracker: "https://tracker.icon.foundation/"
     docker_tag: "iconloop/icon2-node:v1.0.10"
     goloop_version: "https://github.com/icon-project/goloop/tree/v1.0.10"
+    transaction_fee: "on"
+    SCORE_audit: "on"
     description: ""
   env:
     CID: "0x1"
@@ -57,6 +59,8 @@ SejongNet:
     tracker: "https://sejong.tracker.solidwallet.io/"
     docker_tag: "iconloop/goloop-icon:v1.0.10"
     goloop_version: "https://github.com/icon-project/goloop/tree/v1.0.10"
+    transaction_fee: "on"
+    SCORE_audit: "off"
     description: ""
   env:
     CID: "0x9e1477"

@@ -151,7 +151,6 @@ def make_readme(file_name, env):
         table_contents = "|key|value|\n"
         table_contents += "|-----|-----|\n"
         table_contents += f"|network_name|{service}|\n"
-        table_contents += f"|network_alias|{service}|\n"
         table_contents += f"|cid|{env[service]['env']['CID']}|\n"
         table_contents += f"|nid|{env[service]['env']['NID']}|\n"
         for key, val in env[service]['info'].items():
