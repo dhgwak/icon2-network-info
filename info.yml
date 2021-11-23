@@ -14,6 +14,7 @@ MainNet:
   version: "v1.0.0"
   only_goloop: false
   info:
+    api_endpoint: "https://ctz.solidwallet.io/"
     channel: "icon_dex"
     tracker: "https://tracker.icon.foundation/"
     docker_tag: "iconloop/icon2-node:v1.0.10"
@@ -49,6 +50,7 @@ SejongNet:
   version: "v1.0.0"
   only_goloop: false
   info:
+    api_endpoint: "https://sejong.net.solidwallet.io"
     channel: "icon_dex"
     tracker: "https://sejong.tracker.solidwallet.io/"
     docker_tag: "iconloop/goloop-icon:v1.0.10"

@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### Update : 2021-11-23 09:59:09
+#### Update : 2021-11-23 10:05:24
 ### MainNet
 #### [MainNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/MainNet/default_configure.yml)
 |key|value|
@@ -9,7 +9,7 @@
 |network_alias|MainNet|
 |cid|0x1|
 |nid|0x1|
-|api_endpoint|https://preps.net.solidwallet.io|
+|api_endpoint|https://ctz.solidwallet.io/|
 |channel|icon_dex|
 |tracker|https://tracker.icon.foundation/|
 |docker_tag|iconloop/icon2-node:v1.0.10|

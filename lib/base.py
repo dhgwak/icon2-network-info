@@ -154,7 +154,6 @@ def make_readme(file_name, env):
         table_contents += f"|network_alias|{service}|\n"
         table_contents += f"|cid|{env[service]['env']['CID']}|\n"
         table_contents += f"|nid|{env[service]['env']['NID']}|\n"
-        table_contents += f"|api_endpoint|{env[service]['env']['ENDPOINT']}|\n"
         for key, val in env[service]['info'].items():
             table_contents += f"|{key}|{val}|\n"
         main_contents += f"{sub_title}{config_link}{table_contents}"
