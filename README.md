@@ -1,9 +1,9 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### Update : 2021-11-17 14:04:24
+#### Update : 2021-11-23 09:56:43
 ### MainNet
 #### [MainNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/MainNet/default_configure.yml)
-|key|value| 
+|key|value|
 |-----|-----|
 |network_name|MainNet|
 |network_alias|MainNet|
@@ -12,12 +12,12 @@
 |api_endpoint|https://preps.net.solidwallet.io|
 |channel|icon_dex|
 |tracker|https://tracker.icon.foundation/|
-|docker_tag||
-|goloop_version||
+|docker_tag|iconloop/icon2-node:v1.0.10|
+|goloop_version|v1.0.10|
 |description||
 ### SejongNet
 #### [SejongNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/SejongNet/default_configure.yml)
-|key|value| 
+|key|value|
 |-----|-----|
 |network_name|SejongNet|
 |network_alias|SejongNet|
@@ -26,6 +26,6 @@
 |api_endpoint|https://sejong.net.solidwallet.io|
 |channel|icon_dex|
 |tracker|https://sejong.tracker.solidwallet.io/|
-|docker_tag||
-|goloop_version||
+|docker_tag|iconloop/goloop-icon:v1.0.10|
+|goloop_version|v1.0.10|
 |description||

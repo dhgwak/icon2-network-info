@@ -54,7 +54,7 @@ class InitConfig:
                 )
         if self.is_upload:
             self.s3m.cf_re_caching(os_env(self.env['git_env']['aws_cf_id']))
-            make_readme("README.md", self.env)
+        make_readme("README.md", self.env)
         cPrint("-" * os.get_terminal_size().columns)
 
 

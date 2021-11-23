@@ -16,8 +16,8 @@ MainNet:
   info:
     channel: "icon_dex"
     tracker: "https://tracker.icon.foundation/"
-    docker_tag: ""
-    goloop_version: ""
+    docker_tag: "iconloop/icon2-node:v1.0.10"
+    goloop_version: "v1.0.10"
     description: ""
   env:
     CID: "0x1"
@@ -51,8 +51,8 @@ SejongNet:
   info:
     channel: "icon_dex"
     tracker: "https://sejong.tracker.solidwallet.io/"
-    docker_tag: ""
-    goloop_version: ""
+    docker_tag: "iconloop/goloop-icon:v1.0.10"
+    goloop_version: "v1.0.10"
     description: ""
   env:
     CID: "0x9e1477"
