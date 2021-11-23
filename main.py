@@ -9,7 +9,6 @@ from lib.base import (
     cPrint, banner
 )
 
-
 import os
 import json
 

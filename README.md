@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### Update : 2021-11-23 18:27:25
+#### Update : 2021-11-23 18:37:49
 ### MainNet
 #### [MainNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/MainNet/default_configure.yml)
 |key|value|

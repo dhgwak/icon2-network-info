@@ -1,6 +1,5 @@
 #!/usr/bin/env python4
 #-*- coding: utf-8 -*-
-
 import boto3
 import time
 
