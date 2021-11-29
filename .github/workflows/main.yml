@@ -22,16 +22,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
 
       - name: Make the configuration and upload
         run:
+          pip3 install -r requirements.txt
           python3 main.py
 
       - name: Add & Commit
