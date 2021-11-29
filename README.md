@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### Update : 2021-11-29 11:53:49
+#### Update : 2021-11-29 12:05:52
 ### MainNet
 #### [MainNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/MainNet/default_configure.yml)
 |key|value|
@@ -27,7 +27,7 @@
 |api_endpoint|https://lisbon.net.solidwallet.io|
 |p2p_endpoint|seed-lisbon.solidwallet.io:7100|
 |channel|icon_dex|
-|tracker|http://lisbon.tracker.solidwallet.io/|
+|tracker|https://lisbon.tracker.solidwallet.io/|
 |docker_tag|iconloop/goloop-icon:v1.0.10|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.0.10|
 |transaction_fee|on|
