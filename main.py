@@ -17,7 +17,7 @@ import argparse
 def get_parser():
     parser = argparse.ArgumentParser(prog='CTX ENV Initializer')
     parser.add_argument('command', choices=[
-        'config', 'gs', 'upload', 'all'
+        'config', 'gs', 'upload', 'show', 'all'
     ], nargs="?", help='command', default="all")
     parser.add_argument('-s', '--service', type=str, help=f'Service')
     parser.add_argument('-u', '--upload', type=bool, help=f'Upload', default=False)
@@ -56,8 +56,9 @@ class InitConfig:
             self.to_be[_service]['settings']['env']['IISS'] = self.env[_service]['env'].get('IISS', None)
             self.to_be[_service]['settings']['genesis'] = self.env[_service]['env'].get('GENESIS', None)
             self.to_be[_service]['settings']['iiss'] = self.env[_service]['env'].get('IISS', None)
-            config_file = f"icon2/{_service}/default_configure.yml"
-            dump_yaml(config_file, self.to_be[_service])
+            s3_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/default_configure.yml"
+            icon2_file = f"icon2/{_service}/default_configure.yml"
+            dump_yaml(icon2_file, self.to_be[_service])
             compare_result = compare_dict(self.as_is[_service], self.to_be[_service])
             cPrint("- Compare Result:", "yellow")
             print(compare_result)
@@ -67,8 +68,8 @@ class InitConfig:
                 self.is_upload = True
                 self.s3m.upload(
                     os_env(self.env['git_env']['aws_bucket']),
-                    config_file,
-                    config_file
+                    s3_file,
+                    icon2_file
                 )
         self.s3m.cf_re_caching(os_env(self.env['git_env']['aws_cf_id']))
         make_readme("README.md", self.env)
@@ -79,18 +80,20 @@ class InitConfig:
             self.env['network_list'] = self.args.get("service").split(',')
         for service in self.env['network_list']:
             _service = service_name(service)
+            s3_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
             genesis_file = f"icon2/{_service}/icon_genesis.zip"
             self.s3m.upload(
                 os_env(self.env['git_env']['aws_bucket']),
-                genesis_file,
+                s3_file,
                 genesis_file
             )
 
     def show_contents(self, ):
         kvPrint("S3 Contents", os_env(self.env['git_env']['aws_bucket']))
-        for content in self.s3m.content_list(os_env(self.env['git_env']['aws_bucket'])):
-            if content.startswith('icon2'):
-                print(content)
+        bucket_name = os_env(self.env['git_env']['aws_bucket'])
+        prefix = self.env['web_url'].split('/')[-1]
+        for content in self.s3m.content_list(bucket_name, prefix):
+            print(" - ", content)
 
     def run(self, ):
         banner(self.env['version'])
@@ -104,6 +107,8 @@ class InitConfig:
             self.show_contents()
         elif self.args['command'] == "gs":
             self.gs()
+            self.show_contents()
+        elif self.args['command'] == "show":
             self.show_contents()
         else:
             cPrint(f"[!] Please check command ( command={self.args['command']} )", "red")

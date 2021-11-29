@@ -34,9 +34,9 @@ class S3Manager:
             return [content for content in self.s3_client.list_objects_v2(Bucket=bucket_name)['Contents']]
         return []
 
-    def content_list(self, bucket_name):
-        if self.s3_client.list_objects_v2(Bucket=bucket_name).get('Contents'):
-            return [content['Key'] for content in self.s3_client.list_objects_v2(Bucket=bucket_name)['Contents']]
+    def content_list(self, bucket_name, prefix='icon2'):
+        if self.s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix).get('Contents'):
+            return [content['Key'] for content in self.s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)['Contents']]
         return []
 
     def upload(self, bucket, key, file_name, extra_args=None):

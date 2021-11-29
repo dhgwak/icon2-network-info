@@ -5,8 +5,7 @@ git_env:
   aws_default_region: "aws_default_region"
   aws_bucket: "aws_bucket"
   aws_cf_id: "aws_cf_id"
-#web_url: "https://networkinfo.solidwallet.io/icon2"
-web_url: "https://d1hfk7wpm6ar6j.cloudfront.net/icon2"
+web_url: "https://networkinfo.solidwallet.io/node_info"
 network_list:
   - "MainNet"
   - "LisbonNet"
