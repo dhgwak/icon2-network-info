@@ -6,13 +6,12 @@ required:
   iiss: false # for MainNet ( Custom is true )
   genesis: true
 settings:
-  env: {}
-  genesis: null
-  genesis_json: "/goloop/config/genesis.json"
-  genesis_storage: "/goloop/config/icon_genesis.zip"
-  icon2: null
-  iiss: null
-  iiss_json: "/goloop/icon_config.json"
+  env:
+    GENESIS: null
+    GENESIS_JSON: "/goloop/config/genesis.json"
+    GENESIS_STORAGE: "/goloop/config/icon_genesis.zip"
+    IISS: null
+    IISS_JSON: "/goloop/icon_config.json"
 reference:
   env:
     SERVICE:
@@ -84,12 +83,18 @@ reference:
                  \ going? Where are you coming from? What are you heading for? These are totally\
                  \ useless questions.\n\n - Mille Plateaux, Gilles Deleuze & Felix Guattari\n\
                  \n\"Hyperconnect the world\""
-    GENESIS_JSON: "/goloop/config/genesis.json"
-    GENESIS_STORAGE: "/goloop/config/icon_genesis.zip"
+    GENESIS_JSON:
+      type: "str"
+      default: "/goloop/config/genesis.json"
+    GENESIS_STORAGE:
+      type: "str"
+      default: "/goloop/config/icon_genesis.zip"
     IISS:
       type: "dict"
       default: ""
-    IISS_JSON: "/goloop/icon_config.json"
+    IISS_JSON:
+      type: "str"
+      default: "/goloop/icon_config.json"
     IS_AUTOGEN_CERT:
       type: "bool"
       default: false
@@ -174,13 +179,6 @@ reference:
     SLACK_WH_URL:
       type: "str"
       default: ""
-  genesis:
-    type: "obj"
-    default: ""
-  iiss:
-    type: "obj"
-    default: ""
-  icon2:
     CPU_PROFILE:
       type: "str"
       default: "/goloop/data/cpu.profile"
@@ -189,7 +187,7 @@ reference:
       default: "/goloop/data/backup"
     GOLOOP_CONFIG:
       type: "str"
-      default: "/goloop/config/config.json"
+      default: "/goloop/config/server.json"
     GOLOOP_CONSOLE_LEVEL:
       type: "str"
       default: "debug"
@@ -217,18 +215,6 @@ reference:
     GOLOOP_LOG_WRITER_FILENAME:
       type: "str"
       default: "/goloop/logs/goloop.log"
-    GOLOOP_LOG_WRITER_LOCALTIME:
-      type: "bool"
-      default: false
-    GOLOOP_LOG_WRITER_MAXAGE:
-      type: "int"
-      default: 0
-    GOLOOP_LOG_WRITER_MAXBACKUPS:
-      type: "int"
-      default: 0
-    GOLOOP_LOG_WRITER_MAXSIZE:
-      type: "int"
-      default: 100
     GOLOOP_NODE_DIR:
       type: "str"
       default: "/goloop/data"
@@ -250,21 +236,3 @@ reference:
     MEM_PROFILE:
       type: "str"
       default: "/goloop/data/mem.profile"
-    GOLOOP_KEY_PLUGIN:
-      type: "str"
-      default: ""
-    GOLOOP_KEY_PLUGIN_OPTIONS:
-      type: "str"
-      default: ""
-    GOLOOP_LOG_FORWARDER_ADDRESS:
-      type: "str"
-      default: ""
-    GOLOOP_LOG_FORWARDER_LEVEL:
-      type: "str"
-      default: ""
-    GOLOOP_LOG_FORWARDER_NAME:
-      type: "str"
-      default: ""
-    GOLOOP_LOG_FORWARDER_VENDOR:
-      type: "str"
-      default: ""

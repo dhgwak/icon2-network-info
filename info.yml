@@ -9,6 +9,7 @@ git_env:
 web_url: "https://d1hfk7wpm6ar6j.cloudfront.net/icon2"
 network_list:
   - "MainNet"
+  - "LisbonNet"
   - "SejongNet"
 MainNet:
   version: "v1.0.0"
@@ -27,7 +28,6 @@ MainNet:
     CID: "0x1"
     NID: "0x1"
     ENDPOINT: "https://preps.net.solidwallet.io"
-    MIG_INFO_FILE: "migration_configure.yml"
     LOGDIR: "/goloop/logs"
     LOGFILE: "/goloop/logs/goloop.log"
     LOGROTATE_DATE: 14
@@ -48,7 +48,80 @@ MainNet:
               \ going? Where are you coming from? What are you heading for? These are totally\
               \ useless questions.\n\n - Mille Plateaux, Gilles Deleuze & Felix Guattari\n\
               \n\"Hyperconnect the world\""
+    GENESIS_JSON: /goloop/config/genesis.json
+    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
     IISS: ""
+    IISS_JSON: /goloop/icon_config.json
+LisbonNet:
+  version: "v1.0.0"
+  only_goloop: false
+  info:
+    api_endpoint: "https://lisbon.net.solidwallet.io"
+    p2p_endpoint: "seed-lisbon.solidwallet.io:7100"
+    channel: "icon_dex"
+    tracker: "http://lisbon.tracker.solidwallet.io/"
+    docker_tag: "iconloop/goloop-icon:v1.0.10"
+    goloop_version: "https://github.com/icon-project/goloop/tree/v1.0.10"
+    transaction_fee: "on"
+    SCORE_audit: "on"
+    description: ""
+  env:
+    CID: "0x23cdd9"
+    NID: "0x2"
+    ENDPOINT: "https://lisbon.net.solidwallet.io"
+    LOGFILE: "/goloop/logs/goloop.log"
+    LOGROTATE_DATE: 14
+    LOG_OUTPUT_TYPE: "file"
+    GENESIS:
+      accounts:
+        - address: hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a
+          balance: '0x2961fff8ca4a62327800000'
+          name: god
+        - address: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
+          balance: '0x52b7d2dcc80cd2e4000000'
+          name: score_owner
+        - address: hx1000000000000000000000000000000000000000
+          balance: '0x0'
+          name: treasury
+        - address: cx0000000000000000000000000000000000000001
+          name: governance
+          score:
+            contentId: hash:{{ziphash:governance}}
+            contentType: application/zip
+            owner: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
+      chain:
+        auditEnabled: '0x1'
+        blockInterval: '0x7d0'
+        depositTerm: '0x13c680'
+        fee:
+          stepCosts:
+            apiCall: '0x2710'
+            contractCall: '0x61a8'
+            contractCreate: '0x3b9aca00'
+            contractDestruct: '-0x11170'
+            contractSet: '0x7530'
+            contractUpdate: '0x5f5e1000'
+            default: '0x186a0'
+            delete: '-0xf0'
+            eventLog: '0x64'
+            get: '0x0'
+            input: '0xc8'
+            replace: '0x50'
+            set: '0x140'
+          stepLimit:
+            invoke: '0x9502f900'
+            query: '0x2faf080'
+          stepPrice: '0x2e90edd00'
+        feeSharingEnabled: '0x1'
+        revision: '0xd'
+        roundLimitFactor: '0x9'
+        validatorList: [ ]
+      message: gochain generated genesis
+      nid: '0x2'
+    GENESIS_JSON: /goloop/config/genesis.json
+    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
+    IISS: ""
+    IISS_JSON: /goloop/icon_config.json
 SejongNet:
   version: "v1.0.0"
   only_goloop: false
@@ -66,7 +139,6 @@ SejongNet:
     CID: "0x9e1477"
     NID: "0x53"
     ENDPOINT: "https://sejong.net.solidwallet.io"
-    MIG_INFO_FILE: "migration_configure.yml"
     LOGFILE: "/goloop/logs/goloop.log"
     LOGROTATE_DATE: 14
     LOG_OUTPUT_TYPE: "file"
@@ -138,4 +210,113 @@ SejongNet:
           - hx08dd3122ea178246f39e05474f8f1d6ea02e6974
       message: "Generated 20210915-014423134"
       nid: "0x53"
-    IISS: ""
+    GENESIS_JSON: /goloop/config/genesis.json
+    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
+    IISS:
+      bondRequirement: 5
+      iissBlockHeight: 0
+      iissVersion: 2
+      irep: 1296000000
+      lockMaxMultiplier: 20
+      lockMinMultiplier: 5
+      mainPRepCount: 22
+      rewardFund:
+        Icps: 0
+        Iglobal: 15552000000
+        Iprep: 50
+        Irelay: 0
+        Ivoter: 50
+      rrep: 1296000000
+      subPRepCount: 100
+      termPeriod: 7200
+      unbondingPeriodMultiplier: 7
+      unstakeSlotMax: 1000
+    IISS_JSON: /goloop/icon_config.json
+WingNet:
+  version: "v1.0.0"
+  only_goloop: false
+  info:
+    api_endpoint: "http://20.20.6.78:9000"
+    p2p_endpoint: ""
+    channel: "icon_dex"
+    tracker: "http://20.20.6.82/"
+    docker_tag: "iconloop/goloop-icon:v1.0.10"
+    goloop_version: "https://github.com/icon-project/goloop/tree/v1.0.10"
+    transaction_fee: "on"
+    SCORE_audit: "off"
+    description: ""
+  env:
+    CID: "0x64c2c6"
+    NID: "0x2"
+    ENDPOINT: "http://20.20.6.78:9000"
+    LOGFILE: "/goloop/logs/goloop.log"
+    LOGROTATE_DATE: 14
+    LOG_OUTPUT_TYPE: "file"
+    GENESIS:
+      accounts:
+        - address: hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a
+          balance: '0x2961fff8ca4a62327800000'
+          name: god
+        - address: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
+          balance: '0x52b7d2dcc80cd2e4000000'
+          name: score_owner
+        - address: hx1000000000000000000000000000000000000000
+          balance: '0x0'
+          name: treasury
+        - address: cx0000000000000000000000000000000000000001
+          name: governance
+          score:
+            contentId: hash:{{ziphash:governance}}
+            contentType: application/zip
+            owner: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
+      chain:
+        auditEnabled: '0x0'
+        blockInterval: '0x7d0'
+        depositTerm: '0x13c680'
+        fee:
+          stepCosts:
+            apiCall: '0x2710'
+            contractCall: '0x61a8'
+            contractCreate: '0x3b9aca00'
+            contractDestruct: '-0x11170'
+            contractSet: '0x7530'
+            contractUpdate: '0x5f5e1000'
+            default: '0x186a0'
+            delete: '-0xf0'
+            eventLog: '0x64'
+            get: '0x0'
+            input: '0xc8'
+            replace: '0x50'
+            set: '0x140'
+          stepLimit:
+            invoke: '0x9502f900'
+            query: '0x2faf080'
+          stepPrice: '0x2e90edd00'
+        feeSharingEnabled: '0x1'
+        revision: '0xd'
+        roundLimitFactor: '0x9'
+        validatorList: [ ]
+      message: gochain generated genesis
+      nid: '0x2'
+    GENESIS_JSON: /goloop/config/genesis.json
+    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
+    IISS:
+      bondRequirement: 5
+      iissBlockHeight: 0
+      iissVersion: 2
+      irep: 1296000000
+      lockMaxMultiplier: 20
+      lockMinMultiplier: 5
+      mainPRepCount: 4
+      rewardFund:
+        Icps: 0
+        Iglobal: 15552000000
+        Iprep: 50
+        Irelay: 0
+        Ivoter: 50
+      rrep: 1296000000
+      subPRepCount: 100
+      termPeriod: 90
+      unbondingPeriodMultiplier: 7
+      unstakeSlotMax: 1000
+    IISS_JSON: /goloop/icon_config.json

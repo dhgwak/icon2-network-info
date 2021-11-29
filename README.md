@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### Update : 2021-11-23 18:37:49
+#### Update : 2021-11-29 09:54:25
 ### MainNet
 #### [MainNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/MainNet/default_configure.yml)
 |key|value|
@@ -13,6 +13,22 @@
 |channel|icon_dex|
 |tracker|https://tracker.icon.foundation/|
 |docker_tag|iconloop/icon2-node:v1.0.10|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.0.10|
+|transaction_fee|on|
+|SCORE_audit|on|
+|description||
+### LisbonNet
+#### [LisbonNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/LisbonNet/default_configure.yml)
+|key|value|
+|-----|-----|
+|network_name|LisbonNet|
+|cid|0x23cdd9|
+|nid|0x2|
+|api_endpoint|https://lisbon.net.solidwallet.io|
+|p2p_endpoint|seed-lisbon.solidwallet.io:7100|
+|channel|icon_dex|
+|tracker|http://lisbon.tracker.solidwallet.io/|
+|docker_tag|iconloop/goloop-icon:v1.0.10|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.0.10|
 |transaction_fee|on|
 |SCORE_audit|on|

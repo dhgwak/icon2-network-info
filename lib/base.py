@@ -105,10 +105,13 @@ def os_env(key):
     return os.getenv(key)
 
 
-def load_yaml(file_name, ):
-    with open(file_name, "r") as yml:
-        yml_obj = yaml.load(yml, Loader=yaml.FullLoader)
-    return yml_obj
+def load_yaml(file_name):
+    if os.path.exists(file_name) is False:
+        return {"version": "v1.0.0"}
+    else:
+        with open(file_name, "r") as yml:
+            yml_obj = yaml.safe_load(yml)
+        return yml_obj
 
 
 def dump_yaml(file_name, data):
@@ -132,12 +135,12 @@ def dump_file(file_name, data):
 def web_config(url, ):
     res = requests.get(url)
     if res.status_code == 200:
-        return yaml.load(res.text, Loader=yaml.FullLoader)
+        return yaml.safe_load(res.text)
     else:
         return dict()
 
 
-def compare_obj(as_is, to_be):
+def compare_dict(as_is, to_be):
     return DeepDiff(as_is, to_be)
 
 
