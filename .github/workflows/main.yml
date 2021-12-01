@@ -16,58 +16,31 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-#       - uses: actions/setup-python@v2
-#         with:
-#           python-version: '3.8'
-#       - run:
-#           pip install -r requirements.txt
-      
-#       - name: Install dependencies
-#         run: |
-#           python -m pip install --upgrade pip
-#           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-#       - name: Run main.py
-#         run: |
-#           python main.py
-      
-#       - name: Commit changes
-#         run: |
-#           cd /home/runner/work/icon2-network-info/icon2-network-info
-#           git config --global user.email "dhgwak@iconloop.com"
-#           git config --global user.name "dhgwak"
-#           git commit -am "Update configuration"
-#           git push -u origin main
-
-#       - uses: shallwefootball/s3-upload-action@master
-#         name: Upload S3
-#         id: S3
-#         with:
-#           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-#           aws_bucket: ${{ secrets.AWS_BUCKET }}/node_info
-#           source_dir: 'icon2'
-
-      - name: Install AWS CLI
-        run: pip3 install awscli --upgrade --user
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        env:
-          aws-access-key-id: ${{ secrets.aws_access_key_id }}
-          aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
-          aws-region: ${{ secrets.aws_region }}
+      - uses: actions/setup-python@v2
         with:
-          aws-access-key-id: "$env.aws_access_key_id"
-          aws-secret-access-key: "$env.aws_secret_access_key"
-          aws-region: ${{ secrets.aws_region }}
-          mask-aws-account-id: true
+          python-version: '3.8'
+      - run:
+          pip install -r requirements.txt
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-#       - name: Deploy to S3
-#         env:
-#           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-#           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-#         run: |
-#           aws s3 sync ./icon2 ${{secrets.AWS_BUCKET}}
-#       - name: Invalidate CloudFront Cache
-#         run: aws cloudfront create-invalidation --distribution-id ${{secrets.AWS_CF_ID}} --paths "/*"
+      - name: Run main.py
+        run: |
+          python main.py all
+        env:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_default_region: ${{ secrets.AWS_REGION }}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          aws_cf_id: ${{ secrets.AWS_CF_ID }}
+      
+      - name: Commit changes
+        run: |
+          cd /home/runner/work/icon2-network-info/icon2-network-info
+          git config --global user.email "dhgwak@iconloop.com"
+          git config --global user.name "dhgwak"
+          git commit -am "Update configuration"
+          git push -u origin main
