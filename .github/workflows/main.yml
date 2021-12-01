@@ -28,6 +28,14 @@ jobs:
           python-version: '3.8'
       - run:
           pip install -r requirements.txt
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run main.py
+        run: |
           python main.py
 
       - name: Add & Commit
