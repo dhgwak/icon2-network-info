@@ -4,11 +4,11 @@ import time
 
 class S3Manager:
 
-    def __init__(self, aws_access_key_id, aws_secret_access_key):
+    def __init__(self, aws_access_key_id, aws_secret_access_key, aws_default_region):
         # account info ( be args )
         self.aws_access_key_id = aws_access_key_id
         self.aws_secret_access_key = aws_secret_access_key
-        self.aws_default_region = 'ap-northeast-2'
+        self.aws_default_region = aws_default_region
         # sts session
         self.s3_client = self.aws_client('s3')
         # CF client
