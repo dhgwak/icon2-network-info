@@ -25,10 +25,7 @@ class InitConfig:
     def __init__(self, args):
         self.args = args
         self.env = load_yaml("info.yml")
-        self.s3m = S3Manager(
-            os_env(self.env['git_env']['aws_access_key_id']),
-            os_env(self.env['git_env']['aws_secret_access_key'])
-        )
+        self.s3m = None
         self.to_be = dict()
         self.as_is = dict()
         self.is_upload = False
@@ -97,6 +94,10 @@ class InitConfig:
             cPrint("[CONFIG]", "red")
             self.config()
         elif self.args['command'] == "upload":
+            self.s3m = S3Manager(
+                os_env(self.env['git_env']['aws_access_key_id']),
+                os_env(self.env['git_env']['aws_secret_access_key'])
+            )
             cPrint("[UPLOAD]", "red")
             self.upload()
             self.show_contents()
