@@ -42,7 +42,7 @@ jobs:
       
       - name: Commit changes
         run: |
-          cd icon2-network-info
+          cd /home/runner/work/icon2-network-info/icon2-network-info
           git config --global user.email "dhgwak@iconloop.com"
           git config --global user.name "dhgwak"
           git commit -am "Update configuration"
