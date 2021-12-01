@@ -25,19 +25,16 @@ class InitConfig:
     def __init__(self, args):
         self.args = args
         self.env = load_yaml("info.yml")
-        print(os_env(self.env['git_env']['aws_default_region']))
-        print(os_env(self.env['git_env']['aws_bucket']))
-        print(os_env(self.env['git_env']['aws_cf_id']))
         self.s3m = S3Manager(
             os_env(self.env['git_env']['aws_access_key_id']),
-            os_env(self.env['git_env']['aws_secret_access_key']),
-            os_env(self.env['git_env']['aws_default_region'])
+            os_env(self.env['git_env']['aws_secret_access_key'])
         )
         self.to_be = dict()
         self.as_is = dict()
         self.is_upload = False
 
     def config(self, ):
+        print(self.s3m.buckets())
         if self.args.get("service"):
             self.env['network_list'] = self.args.get("service").split(',')
         for service in self.env['network_list']:
