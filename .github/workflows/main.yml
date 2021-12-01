@@ -60,7 +60,7 @@ jobs:
         with:
           aws-access-key-id: "$env.aws_access_key_id"
           aws-secret-access-key: "$env.aws_secret_access_key"
-          aws-region: "$env.aws_region"
+          aws-region: ${{ secrets.aws_region }}
           mask-aws-account-id: true
 
 #       - name: Deploy to S3
