@@ -13,6 +13,7 @@ env:
   aws_bucket: ${{ secrets.AWS_BUCKET }}
   aws_cf_id: ${{ secrets.AWS_CF_ID }}
   aws-region: "ap-northeast-2"
+  GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 
 jobs:
   build:
@@ -38,14 +39,22 @@ jobs:
       - name: Run main.py
         run: |
           python main.py
+      
+      - name: Commit changes
+        run: |
+          cd icon2-network-info
+          git config --global user.email "dhgwak@iconloop.com"
+          git config --global user.name "dhgwak"
+          git commit -am "Update configuration"
+          git push -u origin main
 
-      - name: Add & Commit
-        uses: EndBug/add-and-commit@v4.4.0
-        with:
-          message: 'Update the Network Configuration'
-          ref: 'gh-pages'
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+#       - name: Add & Commit
+#         uses: EndBug/add-and-commit@v4.4.0
+#         with:
+#           message: 'Update the Network Configuration'
+#           ref: 'gh-pages'
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 
 #       - name: Push changes
 #         uses: ad-m/github-push-action@master
@@ -59,8 +68,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ aws_access_key_id }}
+          aws-secret-access-key: ${{  }}
           aws-region: "ap-northeast-2"
           mask-aws-account-id: true
 
