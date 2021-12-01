@@ -37,9 +37,6 @@ reference:
     CONFIG_URL_FILE:
       default: default_configure.yml
       type: str
-    CPU_PROFILE:
-      default: /goloop/data/cpu.profile
-      type: str
     DOCKER_LOG_FILES:
       default: chain.log,health.log,error.log,debug.log
       type: str
@@ -97,6 +94,9 @@ reference:
     GOLOOP_CONSOLE_LEVEL:
       default: debug
       type: str
+    GOLOOP_CPUPROFILE:
+      default: /goloop/data/cpu.profile
+      type: str
     GOLOOP_EE_SOCKET:
       default: /goloop/data/ee.sock
       type: str
@@ -120,6 +120,9 @@ reference:
       type: bool
     GOLOOP_LOG_WRITER_FILENAME:
       default: /goloop/logs/goloop.log
+      type: str
+    GOLOOP_MEMPROFILE:
+      default: /goloop/data/mem.profile
       type: str
     GOLOOP_NODE_DIR:
       default: /goloop/data
@@ -184,9 +187,6 @@ reference:
     MAIN_TIME_SLEEP:
       default: 1
       type: int
-    MEM_PROFILE:
-      default: /goloop/data/mem.profile
-      type: str
     MIGRATION_START:
       default: false
       type: bool

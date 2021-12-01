@@ -13,8 +13,8 @@ import argparse
 def get_parser():
     parser = argparse.ArgumentParser(prog='CTX ENV Initializer')
     parser.add_argument('command', choices=[
-        'config', 'gs', 'upload', 'show', 'all'
-    ], nargs="?", help='command', default="all")
+        'config', 'upload', 'show'
+    ], nargs="?", help='command', default="config")
     parser.add_argument('-s', '--service', type=str, help=f'Service')
     parser.add_argument('-u', '--upload', type=bool, help=f'Upload', default=False)
     return parser.parse_args()
@@ -34,7 +34,6 @@ class InitConfig:
         self.is_upload = False
 
     def config(self, ):
-        print(self.s3m.buckets())
         if self.args.get("service"):
             self.env['network_list'] = self.args.get("service").split(',')
         for service in self.env['network_list']:
@@ -53,7 +52,6 @@ class InitConfig:
             self.to_be[_service]['settings']['env']['IISS'] = self.env[_service]['env'].get('IISS', None)
             self.to_be[_service]['settings']['genesis'] = self.env[_service]['env'].get('GENESIS', None)
             self.to_be[_service]['settings']['iiss'] = self.env[_service]['env'].get('IISS', None)
-            s3_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/default_configure.yml"
             icon2_file = f"icon2/{_service}/default_configure.yml"
             dump_yaml(icon2_file, self.to_be[_service])
             compare_result = compare_dict(self.as_is[_service], self.to_be[_service])
@@ -61,29 +59,29 @@ class InitConfig:
             print(compare_result)
             cPrint("- To-Be Result:", "yellow")
             print(json.dumps(self.to_be[_service]['settings'], indent=4))
-            if self.args['upload'] or self.as_is[_service] != self.to_be[_service] and compare_result:
-                self.is_upload = True
-                self.s3m.upload(
-                    os_env(self.env['git_env']['aws_bucket']),
-                    s3_file,
-                    icon2_file
-                )
-        self.s3m.cf_re_caching(os_env(self.env['git_env']['aws_cf_id']))
         make_readme("README.md", self.env)
         dividing_line()
 
-    def gs(self, ):
+    def upload(self, ):
         if self.args.get("service"):
             self.env['network_list'] = self.args.get("service").split(',')
         for service in self.env['network_list']:
             _service = service_name(service)
-            s3_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
+            s3_config_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/default_configure.yml"
+            s3_gs_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
+            icon2_file = f"icon2/{_service}/default_configure.yml"
             genesis_file = f"icon2/{_service}/icon_genesis.zip"
             self.s3m.upload(
                 os_env(self.env['git_env']['aws_bucket']),
-                s3_file,
+                s3_config_file,
+                icon2_file
+            )
+            self.s3m.upload(
+                os_env(self.env['git_env']['aws_bucket']),
+                s3_gs_file,
                 genesis_file
             )
+        self.s3m.cf_re_caching(os_env(self.env['git_env']['aws_cf_id']))
 
     def show_contents(self, ):
         kvPrint("S3 Contents", os_env(self.env['git_env']['aws_bucket']))
@@ -95,17 +93,15 @@ class InitConfig:
     def run(self, ):
         banner(self.env['version'])
         dividing_line("=")
-        if self.args['command'] == "all":
+        if self.args['command'] == "config":
+            cPrint("[CONFIG]", "red")
             self.config()
-            self.gs()
-            self.show_contents()
-        elif self.args['command'] == "config":
-            self.config()
-            self.show_contents()
-        elif self.args['command'] == "gs":
-            self.gs()
+        elif self.args['command'] == "upload":
+            cPrint("[UPLOAD]", "red")
+            self.upload()
             self.show_contents()
         elif self.args['command'] == "show":
+            cPrint("[SHOW]", "red")
             self.show_contents()
         else:
             cPrint(f"[!] Please check command ( command={self.args['command']} )", "red")
