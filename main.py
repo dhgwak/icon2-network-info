@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-#-*- coding: utf-8 -*-
-
 from lib.s3_manager import S3Manager
 from lib.base import (
     os_env, load_yaml, dump_yaml,

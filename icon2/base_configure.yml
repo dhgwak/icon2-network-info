@@ -179,7 +179,7 @@ reference:
     SLACK_WH_URL:
       type: "str"
       default: ""
-    CPU_PROFILE:
+    GOLOOP_CPUPROFILE:
       type: "str"
       default: "/goloop/data/cpu.profile"
     GOLOOP_BACKUP_DIR:
@@ -233,6 +233,6 @@ reference:
     GOLOOP_RPC_DUMP:
       type: "bool"
       default: false
-    MEM_PROFILE:
+    GOLOOP_MEMPROFILE:
       type: "str"
       default: "/goloop/data/mem.profile"
