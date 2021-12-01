@@ -12,6 +12,7 @@ env:
   aws_default_region: ${{ secrets.AWS_DEFAULT_REGION }}
   aws_bucket: ${{ secrets.AWS_BUCKET }}
   aws_cf_id: ${{ secrets.AWS_CF_ID }}
+  aws-region: ${{ secrets.AWS_REGION }}
 
 jobs:
   build:
