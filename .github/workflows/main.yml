@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  aws_default_region: ${{ secrets.AWS_DEFAULT_REGION }}
+  aws_bucket: ${{ secrets.AWS_BUCKET }}
+  aws_cf_id: ${{ secrets.AWS_CF_ID }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,12 +37,6 @@ jobs:
       - name: Run main.py
         run: |
           python main.py
-        env:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_default_region: ${{ secrets.AWS_DEFAULT_REGION }}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}
-          aws_cf_id: ${{ secrets.AWS_CF_ID }}
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v4.4.0
@@ -45,8 +46,28 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.REPO_TOKEN }}
+#           branch: ${{ github.ref }}
+      
+      - name: Install AWS CLI
+        run: pip3 install awscli --upgrade --user
+        
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          github_token: ${{ secrets.REPO_TOKEN }}
-          branch: ${{ github.ref }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+          mask-aws-account-id: true
+
+#       - name: Deploy to S3
+#         env:
+#           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+#           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+#         run: |
+#           aws s3 sync ./icon2 ${{secrets.AWS_BUCKET}}
+#       - name: Invalidate CloudFront Cache
+#         run: aws cloudfront create-invalidation --distribution-id ${{secrets.AWS_CF_ID}} --paths "/*"
