@@ -12,7 +12,7 @@ env:
   aws_default_region: ${{ secrets.AWS_DEFAULT_REGION }}
   aws_bucket: ${{ secrets.AWS_BUCKET }}
   aws_cf_id: ${{ secrets.AWS_CF_ID }}
-  aws-region: ${{ secrets.AWS_REGION }}
+  aws-region: "ap-northeast-2"
 
 jobs:
   build:
@@ -61,7 +61,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: "ap-northeast-2"
           mask-aws-account-id: true
 
 #       - name: Deploy to S3
