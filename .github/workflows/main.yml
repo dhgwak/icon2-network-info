@@ -31,11 +31,11 @@ jobs:
         run: |
           python main.py
         env:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_default_region: ${{ secrets.AWS_DEFAULT_REGION }}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}
-          aws_cf_id: ${{ secrets.AWS_CF_ID }}
+          aws_access_key_id: ${{ actions-env.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ actions-env.AWS_SECRET_ACCESS_KEY }}
+          aws_default_region: ${{ actions-env.AWS_DEFAULT_REGION }}
+          aws_bucket: ${{ actions-env.AWS_BUCKET }}
+          aws_cf_id: ${{ actions-env.AWS_CF_ID }}
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v4.4.0
@@ -43,10 +43,10 @@ jobs:
           message: 'Update the Network Configuration'
           ref: 'gh-pages'
         env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ actions-env.REPO_TOKEN }}
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.REPO_TOKEN }}
+          github_token: ${{ actions-env.REPO_TOKEN }}
           branch: ${{ github.ref }}
