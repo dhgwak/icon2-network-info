@@ -29,24 +29,18 @@ jobs:
 
       - name: Run main.py
         run: |
-          python main.py
+          python main.py all
         env:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_default_region: ${{ secrets.AWS_DEFAULT_REGION }}
+          aws_default_region: ${{ secrets.AWS_REGION }}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
           aws_cf_id: ${{ secrets.AWS_CF_ID }}
-
-      - name: Add & Commit
-        uses: EndBug/add-and-commit@v4.4.0
-        with:
-          message: 'Update the Network Configuration'
-          ref: 'gh-pages'
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.REPO_TOKEN }}
-          branch: ${{ github.ref }}
+      
+      - name: Commit changes
+        run: |
+          cd /home/runner/work/icon2-network-info/icon2-network-info
+          git config --global user.email "dhgwak@iconloop.com"
+          git config --global user.name "dhgwak"
+          git commit -am "Update configuration"
+          git push -u origin main
