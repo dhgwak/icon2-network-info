@@ -13,7 +13,7 @@ import argparse
 def get_parser():
     parser = argparse.ArgumentParser(prog='CTX ENV Initializer')
     parser.add_argument('command', choices=[
-        'config', 'upload', 'show'
+        'config', 'upload', 'show', 'all'
     ], nargs="?", help='command', default="config")
     parser.add_argument('-s', '--service', type=str, help=f'Service')
     parser.add_argument('-u', '--upload', type=bool, help=f'Upload', default=False)
@@ -90,7 +90,16 @@ class InitConfig:
     def run(self, ):
         banner(self.env['version'])
         dividing_line("=")
-        if self.args['command'] == "config":
+        if self.args['command'] == "all":
+            cPrint("[CONFIG & UPLOAD]", "red")
+            self.config()
+            self.s3m = S3Manager(
+                os_env(self.env['git_env']['aws_access_key_id']),
+                os_env(self.env['git_env']['aws_secret_access_key']),
+                os_env(self.env['git_env']['aws_default_region'])
+            )
+            self.upload()
+        elif self.args['command'] == "config":
             cPrint("[CONFIG]", "red")
             self.config()
         elif self.args['command'] == "upload":
