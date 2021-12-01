@@ -40,6 +40,13 @@ def banner(version):
     print(f" ╚═════╝   ╚═╝   ╚═╝  ╚═╝    ╚══════╝╚═╝  ╚═══╝  ╚═══╝      ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚════ver.{version}")
     print()
 
+
+def dividing_line(char="-", color="cyan"):
+    try:
+        cPrint(char * os.get_terminal_size().columns, color)
+    except:
+        cPrint(char * 30, color)
+
 def dump(obj, nested_level=0, output=sys.stdout):
     spacing = '   '
     def_spacing = '   '

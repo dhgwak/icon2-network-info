@@ -3,10 +3,9 @@ from lib.base import (
     os_env, load_yaml, dump_yaml,
     service_name, make_readme,
     compare_dict, kvPrint,
-    cPrint, banner
+    cPrint, banner, dividing_line
 )
 
-import os
 import json
 import argparse
 
@@ -38,7 +37,7 @@ class InitConfig:
         if self.args.get("service"):
             self.env['network_list'] = self.args.get("service").split(',')
         for service in self.env['network_list']:
-            cPrint("-" * os.get_terminal_size().columns, "cyan")
+            dividing_line()
             _service = service_name(service)
             kvPrint(service, _service)
             as_is_file = f"icon2/{_service}/default_configure.yml"
@@ -70,7 +69,7 @@ class InitConfig:
                 )
         self.s3m.cf_re_caching(os_env(self.env['git_env']['aws_cf_id']))
         make_readme("README.md", self.env)
-        cPrint("-" * os.get_terminal_size().columns, "cyan")
+        dividing_line()
 
     def gs(self, ):
         if self.args.get("service"):
@@ -94,7 +93,7 @@ class InitConfig:
 
     def run(self, ):
         banner(self.env['version'])
-        cPrint("=" * os.get_terminal_size().columns)
+        dividing_line("=")
         if self.args['command'] == "all":
             self.config()
             self.gs()
@@ -109,7 +108,7 @@ class InitConfig:
             self.show_contents()
         else:
             cPrint(f"[!] Please check command ( command={self.args['command']} )", "red")
-        cPrint("=" * os.get_terminal_size().columns)
+        dividing_line("=")
 
 
 if __name__ == '__main__':
