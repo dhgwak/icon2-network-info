@@ -39,14 +39,14 @@ jobs:
 #           git commit -am "Update configuration"
 #           git push -u origin main
 
-      - uses: shallwefootball/s3-upload-action@master
-        name: Upload S3
-        id: S3
-        with:
-          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}/node_info
-          source_dir: 'icon2'
+#       - uses: shallwefootball/s3-upload-action@master
+#         name: Upload S3
+#         id: S3
+#         with:
+#           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+#           aws_bucket: ${{ secrets.AWS_BUCKET }}/node_info
+#           source_dir: 'icon2'
 
       - name: Install AWS CLI
         run: pip3 install awscli --upgrade --user
