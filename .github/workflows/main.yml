@@ -25,42 +25,28 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-      - run:
-          pip install -r requirements.txt
-      
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      - name: Run main.py
-        run: |
-          python main.py
-      
-      - name: Commit changes
-        run: |
-          cd /home/runner/work/icon2-network-info/icon2-network-info
-          git config --global user.email "dhgwak@iconloop.com"
-          git config --global user.name "dhgwak"
-          git commit -am "Update configuration"
-          git push -u origin main
-
-#       - name: Add & Commit
-#         uses: EndBug/add-and-commit@v4.4.0
+#       - uses: actions/setup-python@v2
 #         with:
-#           message: 'Update the Network Configuration'
-#           ref: 'gh-pages'
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+#           python-version: '3.8'
+#       - run:
+#           pip install -r requirements.txt
+      
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-#       - name: Push changes
-#         uses: ad-m/github-push-action@master
-#         with:
-#           github_token: ${{ secrets.REPO_TOKEN }}
-#           branch: ${{ github.ref }}
+#       - name: Run main.py
+#         run: |
+#           python main.py
+      
+#       - name: Commit changes
+#         run: |
+#           cd /home/runner/work/icon2-network-info/icon2-network-info
+#           git config --global user.email "dhgwak@iconloop.com"
+#           git config --global user.name "dhgwak"
+#           git commit -am "Update configuration"
+#           git push -u origin main
       
       - name: Install AWS CLI
         run: pip3 install awscli --upgrade --user
@@ -68,8 +54,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ env.aws_access_key_id }}
+          aws-secret-access-key: ${{ env.aws_secret_access_key }}
           aws-region: "ap-northeast-2"
           mask-aws-account-id: true
 
