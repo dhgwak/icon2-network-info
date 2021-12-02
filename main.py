@@ -68,11 +68,11 @@ class InitConfig:
             s3_gs_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
             icon2_file = f"icon2/{_service}/default_configure.yml"
             genesis_file = f"icon2/{_service}/icon_genesis.zip"
-            self.s3m.upload(
-                os_env(self.env['git_env']['aws_bucket']),
-                s3_config_file,
-                icon2_file
-            )
+            # self.s3m.upload(
+            #     os_env(self.env['git_env']['aws_bucket']),
+            #     s3_config_file,
+            #     icon2_file
+            # )
             self.s3m.upload(
                 os_env(self.env['git_env']['aws_bucket']),
                 s3_gs_file,
@@ -99,6 +99,7 @@ class InitConfig:
                 os_env(self.env['git_env']['aws_default_region'])
             )
             self.upload()
+            self.show_contents()
         elif self.args['command'] == "config":
             cPrint("[CONFIG]", "red")
             self.config()
