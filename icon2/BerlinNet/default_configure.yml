@@ -223,6 +223,12 @@ reference:
     SLACK_WH_URL:
       default: ''
       type: str
+    USE_HEALTH_CHECK:
+      default: true
+      type: bool
+    USE_NTP_SYNC:
+      default: true
+      type: bool
 required:
   env: true
   genesis: true
