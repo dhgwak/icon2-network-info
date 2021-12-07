@@ -164,6 +164,12 @@ reference:
     NTP_SERVERS:
       type: "str"
       default: "time.google.com,time.cloudflare.com,time.facebook.com,time.apple.com,time.euro.apple.com"
+    USE_NTP_SYNC:
+      type: "bool"
+      default: true
+    USE_HEALTH_CHECK:
+      type: "bool"
+      default: true
     RESTORE_PATH:
       type: "str"
       default: "restore"
