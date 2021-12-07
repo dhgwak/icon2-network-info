@@ -326,4 +326,4 @@ settings:
     SERVICE: SejongNet
   genesis: *id001
   iiss: *id002
-version: v1.0.0
+version: v1.0.2
