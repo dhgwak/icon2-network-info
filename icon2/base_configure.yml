@@ -110,6 +110,12 @@ reference:
     KEY_STORE_FILENAME:
       type: "str"
       default: "keystore.json"
+    LOCAL_TEST:
+      type: "bool"
+      default: false
+    ONLY_GOLOOP:
+      type: "bool"
+      default: false
     LOGDIR:
       type: "str"
       default: "/goloop/logs"
