@@ -1,8 +1,8 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### Update : 2021-12-16 01:07:36
+#### Update : 2021-12-16 10:15:07
 ### MainNet
-#### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
+#### [MainNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/MainNet/default_configure.yml)
 |key|value|
 |-----|-----|
 |network_name|MainNet|
@@ -18,7 +18,7 @@
 |SCORE_audit|on|
 |description||
 ### LisbonNet
-#### [LisbonNet configuration](https://networkinfo.solidwallet.io/node_info/LisbonNet/default_configure.yml)
+#### [LisbonNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/LisbonNet/default_configure.yml)
 |key|value|
 |-----|-----|
 |network_name|LisbonNet|
@@ -34,7 +34,7 @@
 |SCORE_audit|on|
 |description||
 ### BerlinNet
-#### [BerlinNet configuration](https://networkinfo.solidwallet.io/node_info/BerlinNet/default_configure.yml)
+#### [BerlinNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/BerlinNet/default_configure.yml)
 |key|value|
 |-----|-----|
 |network_name|BerlinNet|
@@ -50,7 +50,7 @@
 |SCORE_audit|off|
 |description||
 ### SejongNet
-#### [SejongNet configuration](https://networkinfo.solidwallet.io/node_info/SejongNet/default_configure.yml)
+#### [SejongNet configuration](https://d1hfk7wpm6ar6j.cloudfront.net/icon2/SejongNet/default_configure.yml)
 |key|value|
 |-----|-----|
 |network_name|SejongNet|

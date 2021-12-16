@@ -16,7 +16,6 @@ def get_parser():
         'config', 'upload', 'show', 'all'
     ], nargs="?", help='command', default="config")
     parser.add_argument('-s', '--service', type=str, help=f'Service')
-    parser.add_argument('-u', '--upload', type=bool, help=f'Upload', default=False)
     return parser.parse_args()
 
 
@@ -68,11 +67,11 @@ class InitConfig:
             s3_gs_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
             icon2_file = f"icon2/{_service}/default_configure.yml"
             genesis_file = f"icon2/{_service}/icon_genesis.zip"
-            # self.s3m.upload(
-            #     os_env(self.env['git_env']['aws_bucket']),
-            #     s3_config_file,
-            #     icon2_file
-            # )
+            self.s3m.upload(
+                os_env(self.env['git_env']['aws_bucket']),
+                s3_config_file,
+                icon2_file
+            )
             self.s3m.upload(
                 os_env(self.env['git_env']['aws_bucket']),
                 s3_gs_file,
