@@ -163,6 +163,9 @@ reference:
     KEY_STORE_FILENAME:
       default: keystore.json
       type: str
+    LOCAL_TEST:
+      default: false
+      type: bool
     LOGDIR:
       default: /goloop/logs
       type: str
@@ -205,6 +208,9 @@ reference:
     NTP_SERVERS:
       default: time.google.com,time.cloudflare.com,time.facebook.com,time.apple.com,time.euro.apple.com
       type: str
+    ONLY_GOLOOP:
+      default: false
+      type: bool
     RESTORE_PATH:
       default: restore
       type: str
