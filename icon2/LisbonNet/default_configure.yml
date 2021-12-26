@@ -320,4 +320,4 @@ settings:
     SERVICE: LisbonNet
   genesis: *id001
   iiss: ''
-version: v1.0.0
+version: v1.0.1
