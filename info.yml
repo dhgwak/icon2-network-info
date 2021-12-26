@@ -53,7 +53,7 @@ MainNet:
     IISS: ""
     IISS_JSON: /goloop/icon_config.json
 LisbonNet:
-  version: "v1.0.0"
+  version: "v1.0.1"
   only_goloop: false
   info:
     api_endpoint: "https://lisbon.net.solidwallet.io"
@@ -145,7 +145,7 @@ LisbonNet:
     IISS: ""
     IISS_JSON: /goloop/icon_config.json
 BerlinNet:
-  version: "v1.0.0"
+  version: "v1.0.1"
   only_goloop: false
   info:
     api_endpoint: "https://berlin.net.solidwallet.io"
