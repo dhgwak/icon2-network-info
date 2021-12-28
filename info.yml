@@ -359,6 +359,7 @@ WingNet:
     LOGFILE: "/goloop/logs/goloop.log"
     LOGROTATE_DATE: 14
     LOG_OUTPUT_TYPE: "file"
+    SEEDS: "20.20.6.78:7100,20.20.6.77:7100,20.20.6.79:7100,20.20.6.80:7100"
     GENESIS:
       accounts:
         - address: hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a
