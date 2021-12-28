@@ -49,10 +49,7 @@ MainNet:
               \ going? Where are you coming from? What are you heading for? These are totally\
               \ useless questions.\n\n - Mille Plateaux, Gilles Deleuze & Felix Guattari\n\
               \n\"Hyperconnect the world\""
-    GENESIS_JSON: /goloop/config/genesis.json
-    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
     IISS: ""
-    IISS_JSON: /goloop/icon_config.json
 LisbonNet:
   version: "v1.0.1"
   only_goloop: false
@@ -142,10 +139,7 @@ LisbonNet:
           - hx24158e77bae2b3e90b9ae554e5da28f5629b0f8b
       message: gochain generated genesis
       nid: '0x2'
-    GENESIS_JSON: /goloop/config/genesis.json
-    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
     IISS: ""
-    IISS_JSON: /goloop/icon_config.json
 BerlinNet:
   version: "v1.0.1"
   only_goloop: false
@@ -218,8 +212,6 @@ BerlinNet:
           - hx24791b621e1f25bbac71e2bab8294ff38294a2c6
       message: "gochain generated genesis"
       nid: "0x7"
-    GENESIS_JSON: /goloop/config/genesis.json
-    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
     IISS:
       bondRequirement: 5
       iissBlockHeight: 0
@@ -239,7 +231,6 @@ BerlinNet:
       termPeriod: 7200
       unbondingPeriodMultiplier: 7
       unstakeSlotMax: 1000
-    IISS_JSON: /goloop/icon_config.json
 SejongNet:
   version: "v1.0.2"
   only_goloop: false
@@ -329,8 +320,6 @@ SejongNet:
           - hx08dd3122ea178246f39e05474f8f1d6ea02e6974
       message: "Generated 20210915-014423134"
       nid: "0x53"
-    GENESIS_JSON: /goloop/config/genesis.json
-    GENESIS_STORAGE: /goloop/config/icon_genesis.zip
     IISS:
       bondRequirement: 5
       iissBlockHeight: 0
@@ -350,7 +339,6 @@ SejongNet:
       termPeriod: 7200
       unbondingPeriodMultiplier: 7
       unstakeSlotMax: 1000
-    IISS_JSON: /goloop/icon_config.json
 WingNet:
   version: "v1.0.0"
   only_goloop: false

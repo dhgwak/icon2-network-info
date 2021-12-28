@@ -40,14 +40,15 @@ class InitConfig:
             self.as_is[_service] = load_yaml(as_is_file)
             self.to_be[_service] = load_yaml(f"icon2/base_configure.yml")
             self.to_be[_service]['version'] = self.env[_service].get('version', None)
-            self.to_be[_service]['settings']['env']['SERVICE'] = _service
-            self.to_be[_service]['settings']['env']['CID'] = self.env[_service]['env'].get('CID', None)
-            self.to_be[_service]['settings']['env']['NID'] = self.env[_service]['env'].get('NID', None)
-            self.to_be[_service]['settings']['env']['ENDPOINT'] = self.env[_service]['env'].get('ENDPOINT', None)
-            self.to_be[_service]['settings']['env']['GENESIS'] = self.env[_service]['env'].get('GENESIS', None)
-            self.to_be[_service]['settings']['env']['IISS'] = self.env[_service]['env'].get('IISS', None)
-            self.to_be[_service]['settings']['genesis'] = self.env[_service]['env'].get('GENESIS', None)
-            self.to_be[_service]['settings']['iiss'] = self.env[_service]['env'].get('IISS', None)
+            for key in self.env[_service]['env'].keys():
+                if key == 'SERVICE':
+                    self.to_be[_service]['settings']['env'][key] = _service
+                elif key == 'GENESIS':
+                    self.to_be[_service]['settings']['genesis'] = self.env[_service]['env'].get('GENESIS', None)
+                elif key == 'IISS':
+                    self.to_be[_service]['settings']['iiss'] = self.env[_service]['env'].get('IISS', None)
+                else:
+                    self.to_be[_service]['settings']['env'][key] = self.env[_service]['env'].get(key, None)
             icon2_file = f"icon2/{_service}/default_configure.yml"
             dump_yaml(icon2_file, self.to_be[_service])
             compare_result = compare_dict(self.as_is[_service], self.to_be[_service])
