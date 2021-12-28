@@ -32,6 +32,7 @@ MainNet:
     LOGFILE: "/goloop/logs/goloop.log"
     LOGROTATE_DATE: 14
     LOG_OUTPUT_TYPE: "file"
+    SEEDS: "seed-ctz.solidwallet.io:7100"
     GENESIS:
       accounts:
         - address: "hx54f7853dc6481b670caf69c5a27c7c8fe5be8269"
@@ -72,6 +73,7 @@ LisbonNet:
     LOGFILE: "/goloop/logs/goloop.log"
     LOGROTATE_DATE: 14
     LOG_OUTPUT_TYPE: "file"
+    SEEDS: "seed-lisbon.solidwallet.io:7100"
     GENESIS:
       accounts:
         - address: hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a
@@ -164,6 +166,7 @@ BerlinNet:
     LOGFILE: "/goloop/logs/goloop.log"
     LOGROTATE_DATE: 14
     LOG_OUTPUT_TYPE: "file"
+    SEEDS: "seed-berlin.solidwallet.io:7100"
     GENESIS:
       accounts:
         - address: "hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a"
@@ -257,6 +260,7 @@ SejongNet:
     LOGFILE: "/goloop/logs/goloop.log"
     LOGROTATE_DATE: 14
     LOG_OUTPUT_TYPE: "file"
+    SEEDS: "seed-sejong.solidwallet.io:7100"
     GENESIS:
       accounts:
         - address: "hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a"
