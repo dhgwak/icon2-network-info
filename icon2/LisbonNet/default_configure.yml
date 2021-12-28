@@ -244,80 +244,83 @@ settings:
   env:
     CID: '0x23cdd9'
     ENDPOINT: https://lisbon.net.solidwallet.io
-    GENESIS: &id001
-      accounts:
-      - address: hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a
-        balance: '0x2961fff8ca4a62327800000'
-        name: god
-      - address: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
-        balance: '0x52b7d2dcc80cd2e4000000'
-        name: score_owner
-      - address: hx1000000000000000000000000000000000000000
-        balance: '0x0'
-        name: treasury
-      - address: cx0000000000000000000000000000000000000001
-        name: governance
-        score:
-          contentId: hash:{{ziphash:governance}}
-          contentType: application/zip
-          owner: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
-      chain:
-        auditEnabled: '0x1'
-        blockInterval: '0x7d0'
-        depositTerm: '0x13c680'
-        fee:
-          stepCosts:
-            apiCall: '0x2710'
-            contractCall: '0x61a8'
-            contractCreate: '0x3b9aca00'
-            contractDestruct: '-0x11170'
-            contractSet: '0x7530'
-            contractUpdate: '0x5f5e1000'
-            default: '0x186a0'
-            delete: '-0xf0'
-            eventLog: '0x64'
-            get: '0x0'
-            input: '0xc8'
-            replace: '0x50'
-            set: '0x140'
-          stepLimit:
-            invoke: '0x9502f900'
-            query: '0x2faf080'
-          stepPrice: '0x2e90edd00'
-        feeSharingEnabled: '0x1'
-        revision: '0xd'
-        roundLimitFactor: '0x9'
-        validatorList:
-        - hxcddf5733929ee06b98eef590157ac06db609ff23
-        - hx671e16197d321ca12e5a560f48aa1a1b925faf1b
-        - hx73dbec60e200a741d607b4e1233ca347a7d05df6
-        - hxe45ef7de9eef0200a4090e57d6b92f40377eaea1
-        - hx6f36c0b3c0a2ee1bd33a888f84b6dedc79f7052a
-        - hxe21a90699ce258a01b8b4b5b00984163bff7affc
-        - hx7d988272c3eb62500843fb64fc9feccbc604c55a
-        - hx4417d5d6a6aff9b7379a54332bcc0492c8f211e7
-        - hx3fb286b352c35d229113bb72fdd7b65da4826ad0
-        - hx1f7578266186c6e7b6b4be0ccd5d3a3829e98d93
-        - hx40abb59013b011c98d880314db92d762fab3ee15
-        - hx193548d3b36f41faddac75fc3491eb4701182927
-        - hxc513e4772b9e7a8cebf0479ef984bb2fed79738e
-        - hx10f6b0079c455d5b766e02e460996e1872f45f54
-        - hx4bae569c98bf2fe69ec71e2e9d1b5189fdd47cf9
-        - hx4d4acd34c79a6b3cee9be4a49989f0e37f6c5c31
-        - hx657997be01c2c722776aa86aeb1faab99b17367d
-        - hxb302f1147dab852e5b55b6b35ea79f810838f591
-        - hx65fce9c0040489cf28d221f92e61a8687cf2bf2d
-        - hx79e692813dfb510b8184dc132986974f20cbad37
-        - hxcd83400d8c2331b28ea6a41e28efcb90fea2308d
-        - hx24158e77bae2b3e90b9ae554e5da28f5629b0f8b
-      message: gochain generated genesis
-      nid: '0x2'
+    GENESIS: null
     GENESIS_JSON: /goloop/config/genesis.json
     GENESIS_STORAGE: /goloop/config/icon_genesis.zip
-    IISS: ''
+    IISS: null
     IISS_JSON: /goloop/icon_config.json
+    LOGFILE: /goloop/logs/goloop.log
+    LOGROTATE_DATE: 14
+    LOG_OUTPUT_TYPE: file
     NID: '0x2'
-    SERVICE: LisbonNet
-  genesis: *id001
+    SEEDS: seed-lisbon.solidwallet.io:7100
+  genesis:
+    accounts:
+    - address: hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a
+      balance: '0x2961fff8ca4a62327800000'
+      name: god
+    - address: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
+      balance: '0x52b7d2dcc80cd2e4000000'
+      name: score_owner
+    - address: hx1000000000000000000000000000000000000000
+      balance: '0x0'
+      name: treasury
+    - address: cx0000000000000000000000000000000000000001
+      name: governance
+      score:
+        contentId: hash:{{ziphash:governance}}
+        contentType: application/zip
+        owner: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
+    chain:
+      auditEnabled: '0x1'
+      blockInterval: '0x7d0'
+      depositTerm: '0x13c680'
+      fee:
+        stepCosts:
+          apiCall: '0x2710'
+          contractCall: '0x61a8'
+          contractCreate: '0x3b9aca00'
+          contractDestruct: '-0x11170'
+          contractSet: '0x7530'
+          contractUpdate: '0x5f5e1000'
+          default: '0x186a0'
+          delete: '-0xf0'
+          eventLog: '0x64'
+          get: '0x0'
+          input: '0xc8'
+          replace: '0x50'
+          set: '0x140'
+        stepLimit:
+          invoke: '0x9502f900'
+          query: '0x2faf080'
+        stepPrice: '0x2e90edd00'
+      feeSharingEnabled: '0x1'
+      revision: '0xd'
+      roundLimitFactor: '0x9'
+      validatorList:
+      - hxcddf5733929ee06b98eef590157ac06db609ff23
+      - hx671e16197d321ca12e5a560f48aa1a1b925faf1b
+      - hx73dbec60e200a741d607b4e1233ca347a7d05df6
+      - hxe45ef7de9eef0200a4090e57d6b92f40377eaea1
+      - hx6f36c0b3c0a2ee1bd33a888f84b6dedc79f7052a
+      - hxe21a90699ce258a01b8b4b5b00984163bff7affc
+      - hx7d988272c3eb62500843fb64fc9feccbc604c55a
+      - hx4417d5d6a6aff9b7379a54332bcc0492c8f211e7
+      - hx3fb286b352c35d229113bb72fdd7b65da4826ad0
+      - hx1f7578266186c6e7b6b4be0ccd5d3a3829e98d93
+      - hx40abb59013b011c98d880314db92d762fab3ee15
+      - hx193548d3b36f41faddac75fc3491eb4701182927
+      - hxc513e4772b9e7a8cebf0479ef984bb2fed79738e
+      - hx10f6b0079c455d5b766e02e460996e1872f45f54
+      - hx4bae569c98bf2fe69ec71e2e9d1b5189fdd47cf9
+      - hx4d4acd34c79a6b3cee9be4a49989f0e37f6c5c31
+      - hx657997be01c2c722776aa86aeb1faab99b17367d
+      - hxb302f1147dab852e5b55b6b35ea79f810838f591
+      - hx65fce9c0040489cf28d221f92e61a8687cf2bf2d
+      - hx79e692813dfb510b8184dc132986974f20cbad37
+      - hxcd83400d8c2331b28ea6a41e28efcb90fea2308d
+      - hx24158e77bae2b3e90b9ae554e5da28f5629b0f8b
+    message: gochain generated genesis
+    nid: '0x2'
   iiss: ''
 version: v1.0.1

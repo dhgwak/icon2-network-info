@@ -244,98 +244,101 @@ settings:
   env:
     CID: '0x9e1477'
     ENDPOINT: https://sejong.net.solidwallet.io
-    GENESIS: &id001
-      accounts:
-      - address: hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a
-        balance: '0x2961fff8ca4a62327800000'
-        name: god
-      - address: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
-        balance: '0x52b7d2dcc80cd2e4000000'
-        name: score_owner
-      - address: hx1000000000000000000000000000000000000000
-        balance: '0x0'
-        name: treasury
-      - address: cx0000000000000000000000000000000000000001
-        name: governance
-        score:
-          contentId: hash:{{ziphash:governance}}
-          contentType: application/zip
-          owner: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
-      - address: hxc293961bcf611eca8b99ec215d8f24169cf3936f
-        balance: '0x14adf4b7320334b90000000'
-        name: genesis address
-      chain:
-        blockInterval: '0x7d0'
-        fee:
-          stepCosts:
-            apiCall: '0x2710'
-            contractCall: '0x61a8'
-            contractCreate: '0x3b9aca00'
-            contractDestruct: '-0x11170'
-            contractSet: '0x59d8'
-            contractUpdate: '0x3b9aca00'
-            default: '0x186a0'
-            delete: '-0xf0'
-            eventLog: '0x64'
-            get: '0x0'
-            input: '0xc8'
-            replace: '0x50'
-            set: '0x140'
-          stepLimit:
-            invoke: '0x9502f900'
-            query: '0x2faf080'
-          stepPrice: '0x2e90edd00'
-        revision: '0xf'
-        roundLimitFactor: '0x3'
-        validatorList:
-        - hx33f27fa4022200e9d91b2850553d8e5ff98602e1
-        - hxc4aec0393267a1833f7abd496b1da713761ac113
-        - hxd317634efef2c9a08638ce1702335020af82619a
-        - hxa7f147b6492f7c2e6b0005a2a8ffae040cd2a6ba
-        - hxf539cd3511254468c8944313ac6a74859e6c2bf1
-        - hxac717af1bace3c78ac59caaa9ea7e7c506e2582a
-        - hx7b2863ee11d2c7956572cdf19f44010545186538
-        - hxfb687d33ab37768678d59ff47710f35348a1a4ec
-        - hx002903b05ed4483a5b7cd7de10b575c7cad07939
-        - hx31b2d439cbc1e423e5ddc9ae2ab701f0913fea28
-        - hx77c99a70b8d1a4959744cb346e644d1d891ff41f
-        - hxbdbd35ad1659b8a533f978f24b8885901cf10e13
-        - hx808972f8c44a25f0bfdf5d8b11e7a6f77dee90f4
-        - hx99621fb19605dd4f6f97776f8c7243d1dc99a107
-        - hxb97c82a5577a0a436f51a41421ad2d3b28da3f25
-        - hxe14cd6170fbf093acad0771e6d20676e9f85bd95
-        - hx4ed035277c36277502b1b13625d9f4208d1a70a1
-        - hxa92e96fe491796a94b0070f778348a68345879fa
-        - hx25b7c0739242daa3e1a520d38311cf0a9d149710
-        - hx1b58e96b1197510750ff96ff97f88a674e6f8340
-        - hx6b34adf1cdbab2bf4a881275e0011f1bded82fe8
-        - hx08dd3122ea178246f39e05474f8f1d6ea02e6974
-      message: Generated 20210915-014423134
-      nid: '0x53'
+    GENESIS: null
     GENESIS_JSON: /goloop/config/genesis.json
     GENESIS_STORAGE: /goloop/config/icon_genesis.zip
-    IISS: &id002
-      bondRequirement: 5
-      iissBlockHeight: 0
-      iissVersion: 2
-      irep: 1296000000
-      lockMaxMultiplier: 20
-      lockMinMultiplier: 5
-      mainPRepCount: 22
-      rewardFund:
-        Icps: 0
-        Iglobal: 15552000000
-        Iprep: 50
-        Irelay: 0
-        Ivoter: 50
-      rrep: 1296000000
-      subPRepCount: 100
-      termPeriod: 7200
-      unbondingPeriodMultiplier: 7
-      unstakeSlotMax: 1000
+    IISS: null
     IISS_JSON: /goloop/icon_config.json
+    LOGFILE: /goloop/logs/goloop.log
+    LOGROTATE_DATE: 14
+    LOG_OUTPUT_TYPE: file
     NID: '0x53'
-    SERVICE: SejongNet
-  genesis: *id001
-  iiss: *id002
+    SEEDS: seed-sejong.solidwallet.io:7100
+  genesis:
+    accounts:
+    - address: hx5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a
+      balance: '0x2961fff8ca4a62327800000'
+      name: god
+    - address: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
+      balance: '0x52b7d2dcc80cd2e4000000'
+      name: score_owner
+    - address: hx1000000000000000000000000000000000000000
+      balance: '0x0'
+      name: treasury
+    - address: cx0000000000000000000000000000000000000001
+      name: governance
+      score:
+        contentId: hash:{{ziphash:governance}}
+        contentType: application/zip
+        owner: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
+    - address: hxc293961bcf611eca8b99ec215d8f24169cf3936f
+      balance: '0x14adf4b7320334b90000000'
+      name: genesis address
+    chain:
+      blockInterval: '0x7d0'
+      fee:
+        stepCosts:
+          apiCall: '0x2710'
+          contractCall: '0x61a8'
+          contractCreate: '0x3b9aca00'
+          contractDestruct: '-0x11170'
+          contractSet: '0x59d8'
+          contractUpdate: '0x3b9aca00'
+          default: '0x186a0'
+          delete: '-0xf0'
+          eventLog: '0x64'
+          get: '0x0'
+          input: '0xc8'
+          replace: '0x50'
+          set: '0x140'
+        stepLimit:
+          invoke: '0x9502f900'
+          query: '0x2faf080'
+        stepPrice: '0x2e90edd00'
+      revision: '0xf'
+      roundLimitFactor: '0x3'
+      validatorList:
+      - hx33f27fa4022200e9d91b2850553d8e5ff98602e1
+      - hxc4aec0393267a1833f7abd496b1da713761ac113
+      - hxd317634efef2c9a08638ce1702335020af82619a
+      - hxa7f147b6492f7c2e6b0005a2a8ffae040cd2a6ba
+      - hxf539cd3511254468c8944313ac6a74859e6c2bf1
+      - hxac717af1bace3c78ac59caaa9ea7e7c506e2582a
+      - hx7b2863ee11d2c7956572cdf19f44010545186538
+      - hxfb687d33ab37768678d59ff47710f35348a1a4ec
+      - hx002903b05ed4483a5b7cd7de10b575c7cad07939
+      - hx31b2d439cbc1e423e5ddc9ae2ab701f0913fea28
+      - hx77c99a70b8d1a4959744cb346e644d1d891ff41f
+      - hxbdbd35ad1659b8a533f978f24b8885901cf10e13
+      - hx808972f8c44a25f0bfdf5d8b11e7a6f77dee90f4
+      - hx99621fb19605dd4f6f97776f8c7243d1dc99a107
+      - hxb97c82a5577a0a436f51a41421ad2d3b28da3f25
+      - hxe14cd6170fbf093acad0771e6d20676e9f85bd95
+      - hx4ed035277c36277502b1b13625d9f4208d1a70a1
+      - hxa92e96fe491796a94b0070f778348a68345879fa
+      - hx25b7c0739242daa3e1a520d38311cf0a9d149710
+      - hx1b58e96b1197510750ff96ff97f88a674e6f8340
+      - hx6b34adf1cdbab2bf4a881275e0011f1bded82fe8
+      - hx08dd3122ea178246f39e05474f8f1d6ea02e6974
+    message: Generated 20210915-014423134
+    nid: '0x53'
+  iiss:
+    bondRequirement: 5
+    iissBlockHeight: 0
+    iissVersion: 2
+    irep: 1296000000
+    lockMaxMultiplier: 20
+    lockMinMultiplier: 5
+    mainPRepCount: 22
+    rewardFund:
+      Icps: 0
+      Iglobal: 15552000000
+      Iprep: 50
+      Irelay: 0
+      Ivoter: 50
+    rrep: 1296000000
+    subPRepCount: 100
+    termPeriod: 7200
+    unbondingPeriodMultiplier: 7
+    unstakeSlotMax: 1000
 version: v1.0.2

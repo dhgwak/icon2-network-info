@@ -244,28 +244,32 @@ settings:
   env:
     CID: '0x1'
     ENDPOINT: https://preps.net.solidwallet.io
-    GENESIS: &id001
-      accounts:
-      - address: hx54f7853dc6481b670caf69c5a27c7c8fe5be8269
-        balance: '0x2961fff8ca4a62327800000'
-        name: god
-      - address: hx1000000000000000000000000000000000000000
-        balance: '0x0'
-        name: treasury
-      message: "A rhizome has no beginning or end; it is always in the middle, between\
-        \ things, interbeing, intermezzo. The tree is filiation, but the rhizome is\
-        \ alliance, uniquely alliance. The tree imposes the verb \"to be\" but the\
-        \ fabric of the rhizome is the conjunction, \"and ... and ...and...\"This\
-        \ conjunction carries enough force to shake and uproot the verb \"to be.\"\
-        \ Where are you going? Where are you coming from? What are you heading for?\
-        \ These are totally useless questions.\n\n - Mille Plateaux, Gilles Deleuze\
-        \ & Felix Guattari\n\n\"Hyperconnect the world\""
+    GENESIS: null
     GENESIS_JSON: /goloop/config/genesis.json
     GENESIS_STORAGE: /goloop/config/icon_genesis.zip
-    IISS: ''
+    IISS: null
     IISS_JSON: /goloop/icon_config.json
+    LOGDIR: /goloop/logs
+    LOGFILE: /goloop/logs/goloop.log
+    LOGROTATE_DATE: 14
+    LOG_OUTPUT_TYPE: file
     NID: '0x1'
-    SERVICE: MainNet
-  genesis: *id001
+    SEEDS: seed-ctz.solidwallet.io:7100
+  genesis:
+    accounts:
+    - address: hx54f7853dc6481b670caf69c5a27c7c8fe5be8269
+      balance: '0x2961fff8ca4a62327800000'
+      name: god
+    - address: hx1000000000000000000000000000000000000000
+      balance: '0x0'
+      name: treasury
+    message: "A rhizome has no beginning or end; it is always in the middle, between\
+      \ things, interbeing, intermezzo. The tree is filiation, but the rhizome is\
+      \ alliance, uniquely alliance. The tree imposes the verb \"to be\" but the fabric\
+      \ of the rhizome is the conjunction, \"and ... and ...and...\"This conjunction\
+      \ carries enough force to shake and uproot the verb \"to be.\" Where are you\
+      \ going? Where are you coming from? What are you heading for? These are totally\
+      \ useless questions.\n\n - Mille Plateaux, Gilles Deleuze & Felix Guattari\n\
+      \n\"Hyperconnect the world\""
   iiss: ''
 version: v1.0.1
