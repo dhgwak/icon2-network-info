@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### Update : 2021-12-28 08:26:39
+#### Update : 2022-01-12 06:35:02
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
@@ -12,9 +12,10 @@
 |p2p_endpoint|seed-ctz.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://tracker.icon.foundation/|
-|docker_tag|iconloop/icon2-node:v1.0.10|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.0.10|
+|docker_tag|iconloop/icon2-node:v1.1.3|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.1.3|
 |transaction_fee|on|
+|REVISION|0x10|
 |SCORE_audit|on|
 |description||
 ### LisbonNet
@@ -28,9 +29,10 @@
 |p2p_endpoint|seed-lisbon.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://lisbon.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.0.10|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.0.10|
+|docker_tag|iconloop/goloop-icon:v1.1.3|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.1.3|
 |transaction_fee|on|
+|REVISION|0x10|
 |SCORE_audit|on|
 |description||
 ### BerlinNet
@@ -44,9 +46,10 @@
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://berlin.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.0.10|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.0.10|
+|docker_tag|iconloop/goloop-icon:v1.1.3|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.1.3|
 |transaction_fee|on|
+|REVISION|0xf|
 |SCORE_audit|off|
 |description||
 ### SejongNet
@@ -60,8 +63,9 @@
 |p2p_endpoint|seed-sejong.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://sejong.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.0.10|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.0.10|
+|docker_tag|iconloop/goloop-icon:v1.1.3|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.1.3|
 |transaction_fee|on|
+|REVISION|0x10|
 |SCORE_audit|off|
 |description||
