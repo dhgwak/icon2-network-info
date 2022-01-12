@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from deepdiff import DeepDiff
+from pytz import timezone
 
 import os
 import sys
@@ -155,8 +156,9 @@ def compare_dict(as_is:dict, to_be:dict) -> dict or list:
 def make_readme(file_name:str, env:dict) -> bool:
     title = "## ICON2 Netwrok info\n"
     summary = f"```Describes information about the ICON2 network.```\n"
-    gen_date = f"#### Update : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
-    main_contents = f"{title}{summary}{gen_date}"
+    gen_utc_date = f"#### Update(UTC) : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+    get_seoul_date = f"#### Update(Seoul) : {datetime.strftime(datetime.now(timezone('Asia/Seoul')), '%Y-%m-%d %H:%M:%S')}"
+    main_contents = f"{title}{summary}{gen_utc_date}{get_seoul_date}"
     for service in env['network_list']:
         sub_title = f"### {service}\n"
         config_link = f"#### [{service} configuration]({env['web_url']}/{service}/default_configure.yml)\n"
