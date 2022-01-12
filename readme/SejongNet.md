@@ -1,5 +1,3 @@
-#### Update(UTC) : 2022-01-12 16:32:41
-#### Update(Seoul) : 2022-01-12 16:32:41
 ### SejongNet
 #### [SejongNet configuration](https://networkinfo.solidwallet.io/node_info/SejongNet/default_configure.yml)
 |key|value|
@@ -16,4 +14,6 @@
 |transaction_fee|on|
 |REVISION|0x10|
 |SCORE_audit|off|
+|UPDATE_DATE|2021-12-24|
 |description|-|
+---

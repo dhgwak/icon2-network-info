@@ -1,7 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### Update(UTC) : 2022-01-12 16:32:41
-#### Update(Seoul) : 2022-01-12 16:32:41
+#### README Update : 2022-01-12 16:52:38(UTC) | 2022-01-12 16:52:39(Seoul)
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
@@ -18,6 +17,7 @@
 |transaction_fee|on|
 |REVISION|0x10|
 |SCORE_audit|on|
+|UPDATE_DATE|2021-12-24|
 |description|-|
 ### LisbonNet
 #### [LisbonNet configuration](https://networkinfo.solidwallet.io/node_info/LisbonNet/default_configure.yml)
@@ -35,6 +35,7 @@
 |transaction_fee|on|
 |REVISION|0x10|
 |SCORE_audit|on|
+|UPDATE_DATE|2021-12-24|
 |description|-|
 ### BerlinNet
 #### [BerlinNet configuration](https://networkinfo.solidwallet.io/node_info/BerlinNet/default_configure.yml)
@@ -52,6 +53,7 @@
 |transaction_fee|on|
 |REVISION|0x10|
 |SCORE_audit|off|
+|UPDATE_DATE|2021-12-24|
 |description|-|
 ### SejongNet
 #### [SejongNet configuration](https://networkinfo.solidwallet.io/node_info/SejongNet/default_configure.yml)
@@ -69,4 +71,5 @@
 |transaction_fee|on|
 |REVISION|0x10|
 |SCORE_audit|off|
+|UPDATE_DATE|2021-12-24|
 |description|-|

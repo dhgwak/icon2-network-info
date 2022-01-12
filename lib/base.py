@@ -156,9 +156,9 @@ def compare_dict(as_is:dict, to_be:dict) -> dict or list:
 def main_readme(file_name:str, env:dict) -> bool:
     title = "## ICON2 Netwrok info\n"
     summary = f"```Describes information about the ICON2 network.```\n"
-    gen_utc_date = f"#### Update(UTC) : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
-    get_seoul_date = f"#### Update(Seoul) : {datetime.strftime(datetime.now(timezone('Asia/Seoul')), '%Y-%m-%d %H:%M:%S')}\n"
-    main_contents = f"{title}{summary}{gen_utc_date}{get_seoul_date}"
+    gen_date = f"#### README Update : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}(UTC) | " \
+               f"{datetime.strftime(datetime.now(timezone('Asia/Seoul')), '%Y-%m-%d %H:%M:%S')}(Seoul)\n"
+    main_contents = f"{title}{summary}{gen_date}"
     for service in env['network_list']:
         sub_title = f"### {service}\n"
         config_link = f"#### [{service} configuration]({env['web_url']}/{service}/default_configure.yml)\n"
@@ -174,9 +174,6 @@ def main_readme(file_name:str, env:dict) -> bool:
 
 
 def net_readme(file_name:str, env:dict, service:str) -> bool:
-    gen_utc_date = f"#### Update(UTC) : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
-    get_seoul_date = f"#### Update(Seoul) : {datetime.strftime(datetime.now(timezone('Asia/Seoul')), '%Y-%m-%d %H:%M:%S')}\n"
-    main_contents = f"{gen_utc_date}{get_seoul_date}"
     sub_title = f"### {service}\n"
     config_link = f"#### [{service} configuration]({env['web_url']}/{service}/default_configure.yml)\n"
     table_contents = "|key|value|\n"
@@ -186,5 +183,5 @@ def net_readme(file_name:str, env:dict, service:str) -> bool:
     table_contents += f"|nid|{env[service]['env']['NID']}|\n"
     for key, val in env[service]['info'].items():
         table_contents += f"|{key}|{val}|\n"
-    main_contents += f"{sub_title}{config_link}{table_contents}"
+    main_contents = f"{sub_title}{config_link}{table_contents}---\n"
     return dump_file(file_name, main_contents)
