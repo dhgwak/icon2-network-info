@@ -24,7 +24,7 @@ MainNet:
     transaction_fee: "on"
     REVISION: "0x10"
     SCORE_audit: "on"
-    description: ""
+    description: "-"
   env:
     CID: "0x1"
     NID: "0x1"
@@ -64,7 +64,7 @@ LisbonNet:
     transaction_fee: "on"
     REVISION: "0x10"
     SCORE_audit: "on"
-    description: ""
+    description: "-"
   env:
     CID: "0x23cdd9"
     NID: "0x2"
@@ -155,7 +155,7 @@ BerlinNet:
     transaction_fee: "on"
     REVISION: "0x10"
     SCORE_audit: "off"
-    description: ""
+    description: "-"
   env:
     CID: "0xc0d65d"
     NID: "0x7"
@@ -247,7 +247,7 @@ SejongNet:
     transaction_fee: "on"
     REVISION: "0x10"
     SCORE_audit: "off"
-    description: ""
+    description: "-"
   env:
     CID: "0x9e1477"
     NID: "0x53"
