@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import boto3
 import time
 
@@ -14,7 +15,7 @@ class S3Manager:
         # CF client
         self.cf_client = self.aws_client('cloudfront')
 
-    def aws_client(self, service):
+    def aws_client(self, service: str) -> boto3.client:
         client = boto3.client(service,
                               aws_access_key_id=self.aws_access_key_id,
                               aws_secret_access_key=self.aws_secret_access_key,
@@ -22,28 +23,28 @@ class S3Manager:
                               )
         return client
 
-    def buckets(self, ):
+    def buckets(self, ) -> list:
         dict_buckets = self.s3_client.list_buckets()
         buckets = dict_buckets['Buckets']
         return [bucket['Name'] for bucket in buckets]
 
-    def bucket_contents(self, bucket_name):
+    def bucket_contents(self, bucket_name:str) -> list:
         if self.s3_client.list_objects_v2(Bucket=bucket_name).get('Contents'):
             return [content for content in self.s3_client.list_objects_v2(Bucket=bucket_name)['Contents']]
         return []
 
-    def content_list(self, bucket_name, prefix='icon2'):
+    def content_list(self, bucket_name:str, prefix: str='icon2') -> list:
         if self.s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix).get('Contents'):
             return [content['Key'] for content in self.s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)['Contents']]
         return []
 
-    def upload(self, bucket, key, file_name, extra_args=None):
+    def upload(self, bucket:str, key:str, file_name:str, extra_args:object=None):
         if extra_args is None:
             self.s3_client.upload_file(file_name, bucket, key)
         else:
             self.s3_client.upload_file(file_name, bucket, key, ExtraArgs=extra_args)
 
-    def cf_re_caching(self, dist_id):
+    def cf_re_caching(self, dist_id:str):
         self.cf_client.create_invalidation(
             DistributionId=dist_id,
             InvalidationBatch={
@@ -57,8 +58,8 @@ class S3Manager:
             }
         )
 
-    def download(self, bucket, key, file_name):
+    def download(self, bucket:str, key:str, file_name:str):
         self.s3_client.download_file(bucket, key, file_name)
 
-    def delete(self, bucket, key):
+    def delete(self, bucket:str, key:str):
         self.s3_client.delete_object(Bucket=bucket, Key=key)

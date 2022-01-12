@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from datetime import datetime
 from deepdiff import DeepDiff
 
@@ -47,7 +48,7 @@ def dividing_line(char="-", color="cyan"):
     except:
         cPrint(char * 30, color)
 
-def dump(obj, nested_level=0, output=sys.stdout):
+def dump(obj:object, nested_level:int=0, output=sys.stdout):
     spacing = '   '
     def_spacing = '   '
     if type(obj) == dict:
@@ -73,11 +74,11 @@ def dump(obj, nested_level=0, output=sys.stdout):
         print(bcolors.WARNING + '%s%s' % (def_spacing + nested_level * spacing, obj) + bcolors.ENDC)
 
 
-def cPrint(msg, color="green"):
+def cPrint(msg:str, color:str="green"):
     print(getattr(bcolors, color) + "%s" % msg + bcolors.ENDC)
 
 
-def kvPrint(key, value, value_check=False):
+def kvPrint(key:str, value:str, value_check:bool=False):
     class bcolors:
         HEADER = '\033[95m'
         OKBLUE = '\033[94m'
@@ -104,15 +105,15 @@ def kvPrint(key, value, value_check=False):
         print(bcolors.WARNING + "{:>{key_value}} ".format(str(value), key_value=key_value) + bcolors.ENDC)
 
 
-def service_name(service):
+def service_name(service:str) -> str:
     return service.lower().rsplit('net', 1)[0].capitalize() + "Net"
 
 
-def os_env(key):
+def os_env(key:str) -> str:
     return os.getenv(key)
 
 
-def load_yaml(file_name):
+def load_yaml(file_name:str) -> dict or list:
     if os.path.exists(file_name) is False:
         return {"version": "v1.0.0"}
     else:
@@ -121,7 +122,7 @@ def load_yaml(file_name):
         return yml_obj
 
 
-def dump_yaml(file_name, data):
+def dump_yaml(file_name:str, data:dict or list) -> bool:
     with open(file_name, 'w') as yml:
         yaml.dump(data, yml)
     if os.path.exists(file_name):
@@ -130,7 +131,7 @@ def dump_yaml(file_name, data):
         return False
 
 
-def dump_file(file_name, data):
+def dump_file(file_name:str, data:dict or list) -> bool:
     with open(file_name, 'w') as f:
         f.write(data)
     if os.path.exists(file_name):
@@ -139,7 +140,7 @@ def dump_file(file_name, data):
         return False
 
 
-def web_config(url, ):
+def web_config(url:str) -> dict or list:
     res = requests.get(url)
     if res.status_code == 200:
         return yaml.safe_load(res.text)
@@ -147,11 +148,11 @@ def web_config(url, ):
         return dict()
 
 
-def compare_dict(as_is, to_be):
+def compare_dict(as_is:dict, to_be:dict) -> dict or list:
     return DeepDiff(as_is, to_be)
 
 
-def make_readme(file_name, env):
+def make_readme(file_name:str, env:dict) -> bool:
     title = "## ICON2 Netwrok info\n"
     summary = f"```Describes information about the ICON2 network.```\n"
     gen_date = f"#### Update : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
