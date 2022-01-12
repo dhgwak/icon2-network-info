@@ -163,7 +163,7 @@ def make_readme(file_name:str, env:dict) -> bool:
         sub_title = f"### {service}\n"
         config_link = f"#### [{service} configuration]({env['web_url']}/{service}/default_configure.yml)\n"
         table_contents = "|key|value|\n"
-        table_contents += "|-----|-----|\n"
+        table_contents += "|---|---|\n"
         table_contents += f"|network_name|{service}|\n"
         table_contents += f"|cid|{env[service]['env']['CID']}|\n"
         table_contents += f"|nid|{env[service]['env']['NID']}|\n"
