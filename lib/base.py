@@ -153,7 +153,7 @@ def compare_dict(as_is:dict, to_be:dict) -> dict or list:
     return DeepDiff(as_is, to_be)
 
 
-def make_readme(file_name:str, env:dict) -> bool:
+def main_readme(file_name:str, env:dict) -> bool:
     title = "## ICON2 Netwrok info\n"
     summary = f"```Describes information about the ICON2 network.```\n"
     gen_utc_date = f"#### Update(UTC) : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
@@ -170,4 +170,21 @@ def make_readme(file_name:str, env:dict) -> bool:
         for key, val in env[service]['info'].items():
             table_contents += f"|{key}|{val}|\n"
         main_contents += f"{sub_title}{config_link}{table_contents}"
+    return dump_file(file_name, main_contents)
+
+
+def net_readme(file_name:str, env:dict, service:str) -> bool:
+    gen_utc_date = f"#### Update(UTC) : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+    get_seoul_date = f"#### Update(Seoul) : {datetime.strftime(datetime.now(timezone('Asia/Seoul')), '%Y-%m-%d %H:%M:%S')}\n"
+    main_contents = f"{gen_utc_date}{get_seoul_date}"
+    sub_title = f"### {service}\n"
+    config_link = f"#### [{service} configuration]({env['web_url']}/{service}/default_configure.yml)\n"
+    table_contents = "|key|value|\n"
+    table_contents += "|---|---|\n"
+    table_contents += f"|network_name|{service}|\n"
+    table_contents += f"|cid|{env[service]['env']['CID']}|\n"
+    table_contents += f"|nid|{env[service]['env']['NID']}|\n"
+    for key, val in env[service]['info'].items():
+        table_contents += f"|{key}|{val}|\n"
+    main_contents += f"{sub_title}{config_link}{table_contents}"
     return dump_file(file_name, main_contents)

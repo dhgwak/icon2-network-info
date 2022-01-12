@@ -2,7 +2,7 @@
 from lib.s3_manager import S3Manager
 from lib.base import (
     os_env, load_yaml, dump_yaml,
-    service_name, make_readme,
+    service_name, main_readme, net_readme,
     compare_dict, kvPrint,
     cPrint, banner, dividing_line
 )
@@ -57,7 +57,9 @@ class InitConfig:
             print(compare_result)
             cPrint("- To-Be Result:", "yellow")
             print(json.dumps(self.to_be[_service]['settings'], indent=4))
-        make_readme("README.md", self.env)
+        main_readme("README.md", self.env)
+        for service in self.env['network_list']:
+            net_readme(f"./readme/{service}.md", self.env, service)
         dividing_line()
 
     def upload(self, ):
