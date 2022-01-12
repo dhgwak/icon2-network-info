@@ -2,6 +2,8 @@ name: Network Info
 
 on:
   push:
+    paths:
+      - "info.yml"
     branches: [ main ]
   pull_request:
     branches: [ main ]
