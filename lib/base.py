@@ -157,7 +157,7 @@ def make_readme(file_name:str, env:dict) -> bool:
     title = "## ICON2 Netwrok info\n"
     summary = f"```Describes information about the ICON2 network.```\n"
     gen_utc_date = f"#### Update(UTC) : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
-    get_seoul_date = f"#### Update(Seoul) : {datetime.strftime(datetime.now(timezone('Asia/Seoul')), '%Y-%m-%d %H:%M:%S')}"
+    get_seoul_date = f"#### Update(Seoul) : {datetime.strftime(datetime.now(timezone('Asia/Seoul')), '%Y-%m-%d %H:%M:%S')}\n"
     main_contents = f"{title}{summary}{gen_utc_date}{get_seoul_date}"
     for service in env['network_list']:
         sub_title = f"### {service}\n"

@@ -12,7 +12,7 @@ network_list:
   - "BerlinNet"
   - "SejongNet"
 MainNet:
-  version: "v1.0.2"
+  version: "v1.0.3"
   only_goloop: false
   info:
     api_endpoint: "https://ctz.solidwallet.io/"
