@@ -193,7 +193,6 @@ def main_readme(file_name:str, env:dict) -> bool:
 
 
 def net_readme(file_name:str, env:dict, service:str) -> bool:
-    sub_title = f"### {service}\n"
     config_link = f"#### [{service} configuration]({env['ctx_url']}/{service}/default_configure.yml)\n"
     table_contents = "|key|value|\n"
     table_contents += "|---|---|\n"
