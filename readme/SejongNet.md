@@ -1,4 +1,3 @@
-### SejongNet
 #### [SejongNet configuration](https://networkinfo.solidwallet.io/node_info/SejongNet/default_configure.yml)
 |key|value|
 |---|---|

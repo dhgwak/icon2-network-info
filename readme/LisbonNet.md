@@ -1,4 +1,3 @@
-### LisbonNet
 #### [LisbonNet configuration](https://networkinfo.solidwallet.io/node_info/LisbonNet/default_configure.yml)
 |key|value|
 |---|---|

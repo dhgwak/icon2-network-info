@@ -1,4 +1,3 @@
-### BerlinNet
 #### [BerlinNet configuration](https://networkinfo.solidwallet.io/node_info/BerlinNet/default_configure.yml)
 |key|value|
 |---|---|

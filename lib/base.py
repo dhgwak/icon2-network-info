@@ -201,5 +201,5 @@ def net_readme(file_name:str, env:dict, service:str) -> bool:
     table_contents += f"|nid|{env[service]['env']['NID']}|\n"
     for key, val in env[service]['info'].items():
         table_contents += f"|{key}|{val}|\n"
-    main_contents = f"{sub_title}{config_link}{table_contents}---\n"
+    main_contents = f"{config_link}{table_contents}---\n"
     return dump_file(file_name, main_contents)
