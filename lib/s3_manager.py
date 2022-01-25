@@ -11,15 +11,31 @@ class S3Manager:
         self.aws_secret_access_key = aws_secret_access_key
         self.aws_default_region = aws_default_region
         # sts session
-        self.s3_client = self.aws_client('s3')
+        self.s3_client = S3Manager.aws_client(
+            's3',
+            self.aws_access_key_id,
+            self.aws_secret_access_key,
+            self.aws_default_region,
+        )
         # CF client
-        self.cf_client = self.aws_client('cloudfront')
+        self.cf_client = S3Manager.aws_client(
+            'cloudfront',
+            self.aws_access_key_id,
+            self.aws_secret_access_key,
+            self.aws_default_region
+        )
 
-    def aws_client(self, service: str) -> boto3.client:
+    @staticmethod
+    def aws_client(
+            service:str,
+            aws_access_key_id:str,
+            aws_secret_access_key:str,
+            aws_default_region:str
+    ) -> boto3.client:
         client = boto3.client(service,
-                              aws_access_key_id=self.aws_access_key_id,
-                              aws_secret_access_key=self.aws_secret_access_key,
-                              region_name=self.aws_default_region
+                              aws_access_key_id=aws_access_key_id,
+                              aws_secret_access_key=aws_secret_access_key,
+                              region_name=aws_default_region
                               )
         return client
 
@@ -33,10 +49,10 @@ class S3Manager:
             return [content for content in self.s3_client.list_objects_v2(Bucket=bucket_name)['Contents']]
         return []
 
-    def content_list(self, bucket_name:str, prefix: str='icon2') -> list:
+    def content_list(self, bucket_name:str, prefix: str='icon2') -> dict:
         if self.s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix).get('Contents'):
-            return [content['Key'] for content in self.s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)['Contents']]
-        return []
+            return {content['Key']:content['LastModified'] for content in self.s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)['Contents']}
+        return {}
 
     def upload(self, bucket:str, key:str, file_name:str, extra_args:object=None):
         if extra_args is None:

@@ -6,6 +6,7 @@ from pytz import timezone
 import os
 import sys
 import yaml
+import json
 import requests
 
 
@@ -123,18 +124,36 @@ def load_yaml(file_name:str) -> dict or list:
         return yml_obj
 
 
-def dump_yaml(file_name:str, data:dict or list) -> bool:
-    with open(file_name, 'w') as yml:
-        yaml.dump(data, yml)
+def dump_yaml(file_name:str, data:dict or list, option:str='w') -> bool:
+    with open(file_name, option) as outfile:
+        yaml.dump(data, outfile)
     if os.path.exists(file_name):
         return True
     else:
         return False
 
 
-def dump_file(file_name:str, data:dict or list) -> bool:
-    with open(file_name, 'w') as f:
-        f.write(data)
+def load_json(file_name:str) -> dict or list:
+    if os.path.exists(file_name) is False:
+        return {"version": "v1.0.0"}
+    else:
+        with open(file_name, "r") as outfile:
+            json_obj = json.loads(outfile.read())
+        return json_obj
+
+
+def dump_json(file_name:str, data:dict or list, option:str='w') -> bool:
+    with open(file_name, option) as outfile:
+        json.dump(data, outfile)
+    if os.path.exists(file_name):
+        return True
+    else:
+        return False
+
+
+def dump_file(file_name:str, data:dict or list, option:str='w') -> bool:
+    with open(file_name, option) as outfile:
+        outfile.write(data)
     if os.path.exists(file_name):
         return True
     else:
@@ -161,7 +180,7 @@ def main_readme(file_name:str, env:dict) -> bool:
     main_contents = f"{title}{summary}{gen_date}"
     for service in env['network_list']:
         sub_title = f"### {service}\n"
-        config_link = f"#### [{service} configuration]({env['web_url']}/{service}/default_configure.yml)\n"
+        config_link = f"#### [{service} configuration]({env['ctx_url']}/{service}/default_configure.yml)\n"
         table_contents = "|key|value|\n"
         table_contents += "|---|---|\n"
         table_contents += f"|network_name|{service}|\n"
@@ -175,7 +194,7 @@ def main_readme(file_name:str, env:dict) -> bool:
 
 def net_readme(file_name:str, env:dict, service:str) -> bool:
     sub_title = f"### {service}\n"
-    config_link = f"#### [{service} configuration]({env['web_url']}/{service}/default_configure.yml)\n"
+    config_link = f"#### [{service} configuration]({env['ctx_url']}/{service}/default_configure.yml)\n"
     table_contents = "|key|value|\n"
     table_contents += "|---|---|\n"
     table_contents += f"|network_name|{service}|\n"

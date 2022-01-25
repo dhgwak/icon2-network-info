@@ -1,10 +1,8 @@
 version: "str"
 only_goloop: false
 required:
-  env: true
-  icon2: false # Goloop has default env
-  iiss: false # for MainNet ( Custom is true )
-  genesis: true
+  settings:
+    env: true
 settings:
   env:
     GENESIS: null

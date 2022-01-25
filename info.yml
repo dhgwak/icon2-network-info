@@ -1,11 +1,22 @@
-version: "v1.0.1"
+version: "v1.1.0"
 git_env:
   aws_access_key_id: "aws_access_key_id"
   aws_secret_access_key: "aws_secret_access_key"
   aws_default_region: "aws_default_region"
   aws_bucket: "aws_bucket"
   aws_cf_id: "aws_cf_id"
-web_url: "https://networkinfo.solidwallet.io/node_info"
+ctx_url: "https://networkinfo.solidwallet.io/node_info"
+restore_url: "https://networkinfo.solidwallet.io/info"
+restore:
+  MainNet:
+    index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220104/file_list.txt?version=0104"
+    checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220104/checksum.json?version=0104"
+  MainNet_test:
+    index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220104/file_list.txt?version=0104"
+    checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220104/checksum.json?version=0104"
+  SejongNet:
+    index_url: "https://icon2-backup-kr.s3.ap-northeast-2.amazonaws.com/kr/bk/s3sync/SejongNet/20211228/file_list.txt?version=1228"
+    checksum_url: "https://icon2-backup-kr.s3.ap-northeast-2.amazonaws.com/kr/bk/s3sync/SejongNet/20211228/checksum.json?version=1228"
 network_list:
   - "MainNet"
   - "LisbonNet"
@@ -152,8 +163,8 @@ BerlinNet:
     p2p_endpoint: "seed-berlin.solidwallet.io:7100"
     channel: "icon_dex"
     tracker: "https://berlin.tracker.solidwallet.io/"
-    docker_tag: "iconloop/goloop-icon:v1.1.3"
-    goloop_version: "https://github.com/icon-project/goloop/tree/v1.1.3"
+    docker_tag: "iconloop/goloop-icon:v1.2.0"
+    goloop_version: "https://github.com/icon-project/goloop/tree/v1.2.0"
     transaction_fee: "on"
     REVISION: "0x10"
     SCORE_audit: "off"

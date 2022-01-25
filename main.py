@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from lib.s3_manager import S3Manager
 from lib.base import (
-    os_env, load_yaml, dump_yaml,
+    os_env, load_yaml, dump_yaml, load_json, dump_json,
     service_name, main_readme, net_readme,
     compare_dict, kvPrint,
     cPrint, banner, dividing_line
@@ -14,9 +14,10 @@ import argparse
 def get_parser():
     parser = argparse.ArgumentParser(prog='CTX ENV Initializer')
     parser.add_argument('command', choices=[
-        'config', 'upload', 'show', 'all'
+        'config', 'restore', 'upload', 'show', 'all'
     ], nargs="?", help='command', default="config")
     parser.add_argument('-s', '--service', type=str, help=f'Service')
+    parser.add_argument('-b', '--bucket', type=str, help=f'AWS S3 Bucket', default=None)
     return parser.parse_args()
 
 
@@ -62,13 +63,22 @@ class InitConfig:
             net_readme(f"./readme/{service}.md", self.env, service)
         dividing_line()
 
+    def restore(self, ):
+        for service, data in self.env['restore'].items():
+            dividing_line()
+            kvPrint(service, "")
+            dump_json(f"icon2/restore/{service}.json", data)
+            json_data = load_json(f"icon2/restore/{service}.json")
+            print(json.dumps(json_data, indent=4))
+        dividing_line()
+
     def upload(self, ):
         if self.args.get("service"):
             self.env['network_list'] = self.args.get("service").split(',')
         for service in self.env['network_list']:
             _service = service_name(service)
-            s3_config_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/default_configure.yml"
-            s3_gs_file = f"{self.env['web_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
+            s3_config_file = f"{self.env['ctx_url'].split('/')[-1]}/{_service}/default_configure.yml"
+            s3_gs_file = f"{self.env['ctx_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
             icon2_file = f"icon2/{_service}/default_configure.yml"
             genesis_file = f"icon2/{_service}/icon_genesis.zip"
             self.s3m.upload(
@@ -81,14 +91,27 @@ class InitConfig:
                 s3_gs_file,
                 genesis_file
             )
+        for service in self.env['restore'].keys():
+            s3_restore_file = f"{self.env['restore_url']}/{service}.json"
+            restore_file = f"icon2/restore/{service}.json"
+            self.s3m.upload(
+                os_env(self.env['git_env']['aws_bucket']),
+                s3_restore_file,
+                restore_file
+            )
         self.s3m.cf_re_caching(os_env(self.env['git_env']['aws_cf_id']))
 
     def show_contents(self, ):
-        kvPrint("S3 Contents", os_env(self.env['git_env']['aws_bucket']))
-        bucket_name = os_env(self.env['git_env']['aws_bucket'])
-        prefix = self.env['web_url'].split('/')[-1]
-        for content in self.s3m.content_list(bucket_name, prefix):
-            print(" - ", content)
+        kvPrint("S3 Contents", args['bucket'] if args.get('bucket') else os_env(self.env['git_env']['aws_bucket']))
+        bucket_name = args['bucket'] if args.get('bucket') else os_env(self.env['git_env']['aws_bucket'])
+        prefix = self.env['ctx_url'].split('/')[-1]
+        print(prefix)
+        for key, last_modified in self.s3m.content_list(bucket_name, prefix).items():
+            print(f" - {last_modified} : {key}")
+        prefix = self.env['restore_url'].split('/')[-1]
+        print(prefix)
+        for key, last_modified in self.s3m.content_list(bucket_name, prefix).items():
+            print(f" - {last_modified} : {key}")
 
     def run(self, ):
         banner(self.env['version'])
@@ -106,6 +129,9 @@ class InitConfig:
         elif self.args['command'] == "config":
             cPrint("[CONFIG]", "red")
             self.config()
+        elif self.args['command'] == "restore":
+            cPrint("[RESTORE]", "red")
+            self.restore()
         elif self.args['command'] == "upload":
             self.s3m = S3Manager(
                 os_env(self.env['git_env']['aws_access_key_id']),
@@ -115,6 +141,10 @@ class InitConfig:
             self.upload()
             self.show_contents()
         elif self.args['command'] == "show":
+            self.s3m = S3Manager(
+                os_env(self.env['git_env']['aws_access_key_id']),
+                os_env(self.env['git_env']['aws_secret_access_key'])
+            )
             cPrint("[SHOW]", "red")
             self.show_contents()
         else:
