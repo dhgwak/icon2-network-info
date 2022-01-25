@@ -236,10 +236,8 @@ reference:
       default: true
       type: bool
 required:
-  env: true
-  genesis: true
-  icon2: false
-  iiss: false
+  settings:
+    env: true
 settings:
   env:
     CID: '0x23cdd9'
