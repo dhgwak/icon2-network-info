@@ -14,6 +14,6 @@
 |transaction_fee|on|
 |REVISION|0x10|
 |SCORE_audit|off|
-|UPDATE_DATE|2021-12-24|
+|UPDATE_DATE|2022-01-21|
 |description|-|
 ---
