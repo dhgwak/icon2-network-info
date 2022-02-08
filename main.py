@@ -119,6 +119,7 @@ class InitConfig:
         if self.args['command'] == "all":
             cPrint("[CONFIG & UPLOAD]", "red")
             self.config()
+            self.restore()
             self.s3m = S3Manager(
                 os_env(self.env['git_env']['aws_access_key_id']),
                 os_env(self.env['git_env']['aws_secret_access_key']),
