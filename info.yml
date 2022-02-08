@@ -9,8 +9,8 @@ ctx_url: "https://networkinfo.solidwallet.io/node_info"
 restore_url: "https://networkinfo.solidwallet.io/info"
 restore:
   MainNet:
-    index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220204/file_list.txt?version=0205"
-    checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220204/checksum.json?version=0205"
+    index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220204/file_list.txt?version=0208"
+    checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220204/checksum.json?version=0208"
   MainNet_test:
     index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220104/file_list.txt?version=0104"
     checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220104/checksum.json?version=0104"
