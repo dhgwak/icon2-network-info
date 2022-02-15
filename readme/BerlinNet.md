@@ -8,11 +8,11 @@
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://berlin.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.2.1|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.1|
+|docker_tag|iconloop/goloop-icon:v1.2.3|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.3|
 |transaction_fee|on|
 |REVISION|0x11|
 |SCORE_audit|off|
-|UPDATE_DATE|2022-01-27|
+|UPDATE_DATE|2022-02-10|
 |description|-|
 ---

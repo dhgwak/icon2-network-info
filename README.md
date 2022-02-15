@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### README Update : 2022-02-08 03:14:27(UTC) | 2022-02-08 12:14:27(Seoul)
+#### README Update : 2022-02-15 09:19:37(UTC) | 2022-02-15 18:19:37(Seoul)
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
@@ -30,12 +30,12 @@
 |p2p_endpoint|seed-lisbon.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://lisbon.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.1.3|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.1.3|
+|docker_tag|iconloop/goloop-icon:v1.2.3|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.3|
 |transaction_fee|on|
 |REVISION|0x10|
 |SCORE_audit|on|
-|UPDATE_DATE|2021-12-24|
+|UPDATE_DATE|2022-02-15|
 |description|-|
 ### BerlinNet
 #### [BerlinNet configuration](https://networkinfo.solidwallet.io/node_info/BerlinNet/default_configure.yml)
@@ -48,12 +48,12 @@
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://berlin.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.2.1|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.1|
+|docker_tag|iconloop/goloop-icon:v1.2.3|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.3|
 |transaction_fee|on|
 |REVISION|0x11|
 |SCORE_audit|off|
-|UPDATE_DATE|2022-01-27|
+|UPDATE_DATE|2022-02-10|
 |description|-|
 ### SejongNet
 #### [SejongNet configuration](https://networkinfo.solidwallet.io/node_info/SejongNet/default_configure.yml)
@@ -66,10 +66,10 @@
 |p2p_endpoint|seed-sejong.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://sejong.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.1.3|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.1.3|
+|docker_tag|iconloop/goloop-icon:v1.2.3|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.3|
 |transaction_fee|on|
 |REVISION|0x10|
 |SCORE_audit|off|
-|UPDATE_DATE|2021-12-24|
+|UPDATE_DATE|2022-02-15|
 |description|-|
