@@ -11,7 +11,7 @@
 |docker_tag|iconloop/goloop-icon:v1.2.3|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.2.3|
 |transaction_fee|on|
-|REVISION|0x10|
+|REVISION|0x11|
 |SCORE_audit|on|
 |UPDATE_DATE|2022-02-15|
 |description|-|
