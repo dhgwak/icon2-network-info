@@ -15,11 +15,11 @@ restore:
     index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220321/file_list.txt?version=0321"
     checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220321/checksum.json?version=0321"
   LisbonNet:
-    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/BerlinNet/20220322/file_list.txt?version=0322"
-    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/BerlinNet/20220322/checksum.json?version=0322"
+    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/LisbonNet/20220323/file_list.txt?version=0323"
+    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/LisbonNet/20220323/checksum.json?version=0323"
   BerlinNet:
-    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/BerlinNet/20220322/file_list.txt?version=0322"
-    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/BerlinNet/20220322/checksum.json?version=0322"
+    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/LisbonNet/20220323/file_list.txt?version=0323"
+    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/LisbonNet/20220323/checksum.json?version=0323"
   SejongNet:
     index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/SejongNet/20220323/file_list.txt?version=0323"
     checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/SejongNet/20220323/checksum.json?version=0323"
