@@ -8,11 +8,11 @@
 |p2p_endpoint|seed-ctz.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://tracker.icon.foundation/|
-|docker_tag|iconloop/icon2-node:v1.2.7|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.7|
+|docker_tag|iconloop/icon2-node:v1.2.10|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10|
 |transaction_fee|on|
 |REVISION|0x11|
 |SCORE_audit|on|
-|UPDATE_DATE|2022-05-27|
+|UPDATE_DATE|2022-06-22|
 |description|-|
 ---
