@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### README Update : 2022-07-01 08:57:50(UTC) | 2022-07-01 17:57:50(Seoul)
+#### README Update : 2022-07-05 06:01:32(UTC) | 2022-07-05 15:01:32(Seoul)
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
@@ -15,7 +15,7 @@
 |docker_tag|iconloop/icon2-node:v1.2.10|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10|
 |transaction_fee|on|
-|REVISION|0x11|
+|REVISION|0x13|
 |SCORE_audit|on|
 |UPDATE_DATE|2022-06-22|
 |description|-|
@@ -33,7 +33,7 @@
 |docker_tag|iconloop/goloop-icon:v1.2.10|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10|
 |transaction_fee|on|
-|REVISION|0x11|
+|REVISION|0x13|
 |SCORE_audit|on|
 |UPDATE_DATE|2022-06-20|
 |description|-|
@@ -51,7 +51,7 @@
 |docker_tag|iconloop/goloop-icon:v1.2.10|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10|
 |transaction_fee|on|
-|REVISION|0x11|
+|REVISION|0x13|
 |SCORE_audit|off|
 |UPDATE_DATE|2022-06-20|
 |description|-|
@@ -69,7 +69,7 @@
 |docker_tag|iconloop/goloop-icon:v1.2.10|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10|
 |transaction_fee|on|
-|REVISION|0x11|
+|REVISION|0x13|
 |SCORE_audit|off|
 |UPDATE_DATE|2022-06-20|
 |description|-|
