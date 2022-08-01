@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### README Update : 2022-07-21 03:00:33(UTC) | 2022-07-21 12:00:33(Seoul)
+#### README Update : 2022-08-01 04:39:17(UTC) | 2022-08-01 13:39:17(Seoul)
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
