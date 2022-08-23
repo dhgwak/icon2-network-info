@@ -8,11 +8,11 @@
 |p2p_endpoint|seed-sejong.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://sejong.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.2.10|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10|
+|docker_tag|iconloop/goloop-icon:v1.2.10-1|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10-1|
 |transaction_fee|on|
 |REVISION|0x13|
 |SCORE_audit|off|
-|UPDATE_DATE|2022-06-20|
+|UPDATE_DATE|2022-08-12|
 |description|-|
 ---
