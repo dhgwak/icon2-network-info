@@ -12,17 +12,17 @@ restore:
     index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220104/file_list.txt?version=0104"
     checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220104/checksum.json?version=0104"
   MainNet:
-    index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220901/file_list.txt?version=0901"
-    checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220901/checksum.json?version=0901"
+    index_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220921/file_list.txt?version=0921"
+    checksum_url: "https://icon2-backup-va.s3.amazonaws.com/va/bk/s3sync/MainNet/20220921/checksum.json?version=0921"
   LisbonNet:
-    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/LisbonNet/20220901/file_list.txt?version=0901"
-    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/LisbonNet/20220901/checksum.json?version=0901"
+    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/LisbonNet/20220921/file_list.txt?version=0921"
+    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/LisbonNet/20220921/checksum.json?version=0921"
   BerlinNet:
-    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/BerlinNet/20220911/file_list.txt?version=0911"
-    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/BerlinNet/20220911/checksum.json?version=0911"
+    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/BerlinNet/20220921/file_list.txt?version=0921"
+    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/BerlinNet/20220921/checksum.json?version=0921"
   SejongNet:
-    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/SejongNet/20220821/file_list.txt?version=0821"
-    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/SejongNet/20220821/checksum.json?version=0821"
+    index_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/SejongNet/20220921/file_list.txt?version=0921"
+    checksum_url: "https://icon2-backup-jp.s3.ap-northeast-1.amazonaws.com/jp/bk/s3sync/SejongNet/20220921/checksum.json?version=0921"
 network_list:
   - "MainNet"
   - "LisbonNet"
