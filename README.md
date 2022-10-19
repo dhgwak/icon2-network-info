@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### README Update : 2022-10-11 03:00:32(UTC) | 2022-10-11 12:00:32(Seoul)
+#### README Update : 2022-10-19 04:59:05(UTC) | 2022-10-19 13:59:05(Seoul)
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
@@ -8,7 +8,7 @@
 |network_name|MainNet|
 |cid|0x1|
 |nid|0x1|
-|api_endpoint|https://ctz.solidwallet.io/|
+|api_endpoint|https://preps.net.solidwallet.io/|
 |p2p_endpoint|seed-ctz.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://tracker.icon.foundation/|

@@ -4,7 +4,7 @@
 |network_name|MainNet|
 |cid|0x1|
 |nid|0x1|
-|api_endpoint|https://ctz.solidwallet.io/|
+|api_endpoint|https://preps.net.solidwallet.io/|
 |p2p_endpoint|seed-ctz.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://tracker.icon.foundation/|
