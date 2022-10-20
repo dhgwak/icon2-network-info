@@ -36,7 +36,7 @@ class InitConfig:
             self.env['network_list'] = self.args.get("service").split(',')
         network_summary = dict()
         network_summary['network_list'] = self.env['network_list']
-        dump_yaml("icon/network_summary.yml", network_summary)
+        dump_yaml("icon2/network_summary.yml", network_summary)
         for service in self.env['network_list']:
             dividing_line()
             _service = service_name(service)
