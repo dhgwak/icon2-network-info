@@ -78,23 +78,23 @@ class InitConfig:
     def upload(self, ):
         if self.args.get("service"):
             self.env['network_list'] = self.args.get("service").split(',')
+        network_summary_file = "icon2/network_summary.yml"
+        s3_ns_file = f"{self.env['ctx_url'].split('/')[-1]}/network_summary.yml"
+        self.s3m.upload(
+            os_env(self.env['git_env']['aws_bucket']),
+            s3_ns_file,
+            network_summary_file
+        )
         for service in self.env['network_list']:
             _service = service_name(service)
             s3_config_file = f"{self.env['ctx_url'].split('/')[-1]}/{_service}/default_configure.yml"
-            s3_ns_file = f"{self.env['ctx_url'].split('/')[-1]}/network_summary.yml"
             s3_gs_file = f"{self.env['ctx_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
             icon2_file = f"icon2/{_service}/default_configure.yml"
-            network_summary_file = "icon2/network_summary.yml"
             genesis_file = f"icon2/{_service}/icon_genesis.zip"
             self.s3m.upload(
                 os_env(self.env['git_env']['aws_bucket']),
                 s3_config_file,
                 icon2_file
-            )
-            self.s3m.upload(
-                os_env(self.env['git_env']['aws_bucket']),
-                s3_ns_file,
-                network_summary_file
             )
             self.s3m.upload(
                 os_env(self.env['git_env']['aws_bucket']),
