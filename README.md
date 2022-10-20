@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### README Update : 2022-10-19 04:59:05(UTC) | 2022-10-19 13:59:05(Seoul)
+#### README Update : 2022-10-20 06:00:20(UTC) | 2022-10-20 15:00:20(Seoul)
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
@@ -30,12 +30,12 @@
 |p2p_endpoint|seed-lisbon.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://lisbon.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.2.10-1|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10-1|
+|docker_tag|iconloop/goloop-icon:v1.2.14|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.14|
 |transaction_fee|on|
 |REVISION|0x13|
 |SCORE_audit|on|
-|UPDATE_DATE|2022-08-16|
+|UPDATE_DATE|2022-10-20|
 |description|-|
 ### BerlinNet
 #### [BerlinNet configuration](https://networkinfo.solidwallet.io/node_info/BerlinNet/default_configure.yml)
@@ -48,12 +48,12 @@
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://berlin.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.2.10-1|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10-1|
+|docker_tag|iconloop/goloop-icon:v1.2.14|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.14|
 |transaction_fee|on|
 |REVISION|0x13|
 |SCORE_audit|off|
-|UPDATE_DATE|2022-08-16|
+|UPDATE_DATE|2022-10-19|
 |description|-|
 ### SejongNet
 #### [SejongNet configuration](https://networkinfo.solidwallet.io/node_info/SejongNet/default_configure.yml)
@@ -66,10 +66,10 @@
 |p2p_endpoint|seed-sejong.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://sejong.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.2.10-1|
-|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.10-1|
+|docker_tag|iconloop/icon2-node:v1.2.14|
+|goloop_version|https://github.com/icon-project/goloop/tree/v1.2.14|
 |transaction_fee|on|
 |REVISION|0x13|
 |SCORE_audit|off|
-|UPDATE_DATE|2022-08-12|
+|UPDATE_DATE|2022-10-20|
 |description|-|
