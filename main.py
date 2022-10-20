@@ -84,7 +84,7 @@ class InitConfig:
             s3_ns_file = f"{self.env['ctx_url'].split('/')[-1]}/network_summary.yml"
             s3_gs_file = f"{self.env['ctx_url'].split('/')[-1]}/{_service}/icon_genesis.zip"
             icon2_file = f"icon2/{_service}/default_configure.yml"
-            network_summary_file = "icon/network_summary.yml"
+            network_summary_file = "icon2/network_summary.yml"
             genesis_file = f"icon2/{_service}/icon_genesis.zip"
             self.s3m.upload(
                 os_env(self.env['git_env']['aws_bucket']),
