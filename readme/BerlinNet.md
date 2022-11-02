@@ -2,7 +2,7 @@
 |key|value|
 |---|---|
 |network_name|BerlinNet|
-|cid|0x12a4d4|
+|cid|0x267247|
 |nid|0x7|
 |api_endpoint|https://berlin.net.solidwallet.io|
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
@@ -13,6 +13,6 @@
 |transaction_fee|on|
 |REVISION|0x13|
 |SCORE_audit|off|
-|UPDATE_DATE|2022-10-19|
+|UPDATE_DATE|2022-11-02|
 |description|-|
 ---

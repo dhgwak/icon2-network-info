@@ -240,7 +240,7 @@ required:
     env: true
 settings:
   env:
-    CID: '0x12a4d4'
+    CID: '0x267247'
     ENDPOINT: https://berlin.net.solidwallet.io
     GENESIS: null
     GENESIS_JSON: /goloop/config/genesis.json
