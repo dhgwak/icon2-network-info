@@ -175,10 +175,10 @@ BerlinNet:
     transaction_fee: "on"
     REVISION: "0x13"
     SCORE_audit: "off"
-    UPDATE_DATE: "2022-10-19"
+    UPDATE_DATE: "2022-11-02"
     description: "-"
   env:
-    CID: "0x12a4d4"
+    CID: "0x267247"
     NID: "0x7"
     ENDPOINT: "https://berlin.net.solidwallet.io"
     LOGFILE: "/goloop/logs/goloop.log"
