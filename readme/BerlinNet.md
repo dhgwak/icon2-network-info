@@ -2,13 +2,13 @@
 |key|value|
 |---|---|
 |network_name|BerlinNet|
-|cid|0xc0d65d|
+|cid|0x12a4d4|
 |nid|0x7|
 |api_endpoint|https://berlin.net.solidwallet.io|
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://berlin.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.2.14|
+|docker_tag|iconloop/icon2-node:v1.2.14|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.2.14|
 |transaction_fee|on|
 |REVISION|0x13|

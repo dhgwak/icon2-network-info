@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### README Update : 2022-11-02 01:25:40(UTC) | 2022-11-02 10:25:40(Seoul)
+#### README Update : 2022-11-02 05:36:14(UTC) | 2022-11-02 14:36:14(Seoul)
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
@@ -42,13 +42,13 @@
 |key|value|
 |---|---|
 |network_name|BerlinNet|
-|cid|0xc0d65d|
+|cid|0x12a4d4|
 |nid|0x7|
 |api_endpoint|https://berlin.net.solidwallet.io|
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
 |channel|icon_dex|
 |tracker|https://berlin.tracker.solidwallet.io/|
-|docker_tag|iconloop/goloop-icon:v1.2.14|
+|docker_tag|iconloop/icon2-node:v1.2.14|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.2.14|
 |transaction_fee|on|
 |REVISION|0x13|
