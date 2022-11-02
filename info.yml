@@ -162,14 +162,15 @@ LisbonNet:
       nid: '0x2'
     IISS: ""
 BerlinNet:
-  version: "v1.0.5"
+  version: "v1.0.6"
   only_goloop: false
   info:
     api_endpoint: "https://berlin.net.solidwallet.io"
     p2p_endpoint: "seed-berlin.solidwallet.io:7100"
     channel: "icon_dex"
     tracker: "https://berlin.tracker.solidwallet.io/"
-    docker_tag: "iconloop/goloop-icon:v1.2.14"
+    docker_tag: "iconloop/icon2-node:v1.2.14"
+      #docker_tag: "iconloop/goloop-icon:v1.2.14"
     goloop_version: "https://github.com/icon-project/goloop/tree/v1.2.14"
     transaction_fee: "on"
     REVISION: "0x13"
@@ -177,7 +178,7 @@ BerlinNet:
     UPDATE_DATE: "2022-10-19"
     description: "-"
   env:
-    CID: "0xc0d65d"
+    CID: "0x12a4d4"
     NID: "0x7"
     ENDPOINT: "https://berlin.net.solidwallet.io"
     LOGFILE: "/goloop/logs/goloop.log"
@@ -229,10 +230,10 @@ BerlinNet:
         revision: "0xd"
         roundLimitFactor: "0x9"
         validatorList:
-          - hx38f35eff5e5516b48a713fe3c8031c94124191f0
-          - hxf526cc053c33a7c3a48b70111834cf3a71609f0c
-          - hx14d4c29c4bd2bb2cc79f1284d7b6a403ad6a677a
-          - hx24791b621e1f25bbac71e2bab8294ff38294a2c6
+          - hxffb2996f2da27fa8e37053e7d54ab12076ebc242
+          - hx9e9e37746ff6a1e339bc898d803aa4da8aae1f69
+          - hx39d8201051146e191cb89c40ee8ef5695556496a
+          - hx6eba79486f98193537bae35ad521b8965a2c3548
       message: "gochain generated genesis"
       nid: "0x7"
     IISS:
