@@ -2,7 +2,7 @@
 |key|value|
 |---|---|
 |network_name|BerlinNet|
-|cid|0x267247|
+|cid|0xa4396b|
 |nid|0x7|
 |api_endpoint|https://berlin.net.solidwallet.io|
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
