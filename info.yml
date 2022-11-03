@@ -206,27 +206,27 @@ BerlinNet:
           balance: "0x14adf4b7320334b90000000"
           name: "genesis address"
       chain:
-        auditEnabled: "0x1",
-        revision: "0xd",
-        blockInterval: "0x7d0",
-        roundLimitFactor: "0x9",
+        auditEnabled: "0x1"
+        revision: "0xd"
+        blockInterval: "0x7d0"
+        roundLimitFactor: "0x9"
         fee:
           stepCosts:
-            apiCall: "0x2710",
-            contractCall: "0x61a8",
-            contractCreate: "0x3b9aca00",
-            contractSet: "0x3a98",
-            contractUpdate: "0x3b9aca00",
-            default: "0x186a0",
-            delete: "-0xf0",
-            deleteBase: "0xc8",
-            get: "0x19",
-            getBase: "0xbb8",
-            input: "0xc8",
-            log: "0x64",
-            logBase: "0x1388",
-            schema: "0x1",
-            set: "0x140",
+            apiCall: "0x2710"
+            contractCall: "0x61a8"
+            contractCreate: "0x3b9aca00"
+            contractSet: "0x3a98"
+            contractUpdate: "0x3b9aca00"
+            default: "0x186a0"
+            delete: "-0xf0"
+            deleteBase: "0xc8"
+            get: "0x19"
+            getBase: "0xbb8"
+            input: "0xc8"
+            log: "0x64"
+            logBase: "0x1388"
+            schema: "0x1"
+            set: "0x140"
             setBase: "0x2710"
           stepLimit:
             invoke: "0x9502f900"
