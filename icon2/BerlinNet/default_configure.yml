@@ -269,31 +269,34 @@ settings:
         contentId: hash:{{ziphash:governance}}
         contentType: application/zip
         owner: hx6e1dd0d4432620778b54b2bbc21ac3df961adf89
-    - address: hxc293961bcf611eca8b99ec215d8f24169cf3936f
+    - address: hx89e9d082f1444dd3bb3496c8509a541eb2949a5b
       balance: '0x14adf4b7320334b90000000'
       name: genesis address
     chain:
+      auditEnabled: '0x1'
       blockInterval: '0x7d0'
       fee:
         stepCosts:
           apiCall: '0x2710'
           contractCall: '0x61a8'
           contractCreate: '0x3b9aca00'
-          contractDestruct: '-0x11170'
-          contractSet: '0x7530'
-          contractUpdate: '0x5f5e1000'
+          contractSet: '0x3a98'
+          contractUpdate: '0x3b9aca00'
           default: '0x186a0'
           delete: '-0xf0'
-          eventLog: '0x64'
-          get: '0x0'
+          deleteBase: '0xc8'
+          get: '0x19'
+          getBase: '0xbb8'
           input: '0xc8'
-          replace: '0x50'
+          log: '0x64'
+          logBase: '0x1388'
+          schema: '0x1'
           set: '0x140'
+          setBase: '0x2710'
         stepLimit:
           invoke: '0x9502f900'
           query: '0x2faf080'
         stepPrice: '0x2e90edd00'
-      feeSharingEnabled: '0x1'
       revision: '0xd'
       roundLimitFactor: '0x9'
       validatorList:
