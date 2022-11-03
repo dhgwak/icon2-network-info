@@ -178,7 +178,7 @@ BerlinNet:
     UPDATE_DATE: "2022-11-02"
     description: "-"
   env:
-    CID: "0x267247"
+    CID: "0xa4396b"
     NID: "0x7"
     ENDPOINT: "https://berlin.net.solidwallet.io"
     LOGFILE: "/goloop/logs/goloop.log"
