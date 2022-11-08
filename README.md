@@ -1,6 +1,6 @@
 ## ICON2 Netwrok info
 ```Describes information about the ICON2 network.```
-#### README Update : 2022-11-03 09:40:07(UTC) | 2022-11-03 18:40:07(Seoul)
+#### README Update : 2022-11-08 02:59:22(UTC) | 2022-11-08 11:59:22(Seoul)
 ### MainNet
 #### [MainNet configuration](https://networkinfo.solidwallet.io/node_info/MainNet/default_configure.yml)
 |key|value|
@@ -42,7 +42,7 @@
 |key|value|
 |---|---|
 |network_name|BerlinNet|
-|cid|0xa4396b|
+|cid|0xee03d9|
 |nid|0x7|
 |api_endpoint|https://berlin.net.solidwallet.io|
 |p2p_endpoint|seed-berlin.solidwallet.io:7100|
@@ -51,9 +51,9 @@
 |docker_tag|iconloop/icon2-node:v1.2.14|
 |goloop_version|https://github.com/icon-project/goloop/tree/v1.2.14|
 |transaction_fee|on|
-|REVISION|0x13|
+|REVISION|0xd|
 |SCORE_audit|off|
-|UPDATE_DATE|2022-11-02|
+|UPDATE_DATE|2022-11-04|
 |description|-|
 ### SejongNet
 #### [SejongNet configuration](https://networkinfo.solidwallet.io/node_info/SejongNet/default_configure.yml)
