@@ -162,7 +162,7 @@ LisbonNet:
       nid: '0x2'
     IISS: ""
 BerlinNet:
-  version: "v1.0.6"
+  version: "v1.0.7"
   only_goloop: false
   info:
     api_endpoint: "https://berlin.net.solidwallet.io"
